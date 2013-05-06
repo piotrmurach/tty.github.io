@@ -1,4 +1,3 @@
 _site
 *.sw*
-Gemfile.lock
 .sass-cache
