@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'VarelaRegular';
+  src: url(asset_path('fonts/Varela-Regular-webfont.eot'));
+  src: url(asset_path('fonts/Varela-Regular-webfont.eot') + '?#iefix') format('embedded-opentype'),
+        url(asset_path('fonts/Varela-Regular-webfont.woff')) format('woff'),
+        url(asset_path('fonts/Varela-Regular-webfont.ttf')) format('truetype'),
+        url(asset_path('fonts/Varela-Regular-webfont.svg') + '#VarelaRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
