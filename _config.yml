@@ -1,0 +1,10 @@
+name: TTY
+pygments: true
+assets:
+  soruces:
+    - _assets/fonts
+  compress:
+    css: sass
+    js: uglifier
+  cachebust: hard
+  gzip: [ text/css, application/javascript ]
