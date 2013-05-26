@@ -3,9 +3,99 @@ layout: default
 title: TTY • Toolbox for developing CLI clients in Ruby
 ---
 
-<div id="home" class="intro">
-  <h1>
-    <span class="tty-name">TTY</span>
-    <span class="tty-blurb">The Ruby toolbox for CLI clients</span>
-  </h1>
-</div>
+<section id="home" class="intro">
+  <header>
+    <a href="/" class="brand"><span class="tty-logo"></span></a>
+    <h1>
+      <span class="tty-blurb">The Ruby toolbox for CLI clients</span>
+    </h1>
+  </header>
+</section>
+
+<section id="features" class="section">
+  <header>
+    <hgroup>
+      <h2 class='headline'>Features</h2>
+    </hgroup>
+  </header>
+
+  <p>
+    All too often projects that interact with command line create their own interface logic that gathers input from users and displays information back. Many times utility files are created that contain methods for reading system or terminal properties. Shouldn't we focus our energy on building the actual client? Our time and energy should be spent on creating the tools not the foundation.
+  </p>
+
+  <ul class="column-1">
+    <li><span>Table rendering with an easy-to-use API.</span></li>
+    <li><span>Terminal output colorization.</span></li>
+    <li><span>Terminal & System detection utilities.</span></li>
+    <li><span>Text manipulation(wrapping/truncation).</span></li>
+    <li><span>Shell user interface.</span></li>
+  </ul>
+  <ul class="column-2">
+    <li><span>Configuration file management.</span></li>
+    <li><span>Multilevel logger.</span></li>
+    <li><span>Plugin ecosystem.</span></li>
+    <li><span>No dependencies to allow for easy gem vendoring.</span></li>
+    <li><span>Fully tested with major ruby interpreters.</span></li>
+  </ul>
+
+  <div class="separator" />
+</section>
+
+<section id="quick-start" class="quickstart section">
+  <header>
+    <hgroup>
+      <h2 class='headline'>Quick Start</h2>
+    </hgroup>
+  </header>
+
+  <p>
+    While installling TTY is simple, there are few requirements. TTY is installed and managed via <a href="rubygems.org">rubygems</a>, the <a href="http://www.ruby-lang.org/en/">ruby</a> package manager.
+  </p>
+
+  <h3 class="sub-headline">Installation</h3>
+
+  {% highlight ruby %}
+    $ gem install tty
+  {% endhighlight %}
+
+  <h3 class="sub-headline">Data Tables</h3>
+
+  <p>
+    Handling of tabular data 
+  </p>
+
+  {% highlight ruby %}
+    table = TTY::Table.new header: ['h1', 'h2'], rows: [['a1', 'a2'], ['b1', 'b2']]
+  {% endhighlight %}
+
+  <h3 class="sub-headline">Shell Interactions</h3>
+  <p>
+    The library provides small DSL to help with parsing and asking precise questions in the shell.
+  </p>
+
+  {% highlight ruby %}
+    shell  = TTY::Shell.new
+    shell.ask "What is your name?" do
+      argument :required
+      default  'Piotr'
+      validate /\w+\s\w+/
+      valid    ['Piotr', 'Piotrek']
+      modify   :capitalize
+    end.read_string
+  {% endhighlight %}
+
+  <h3 class="sub-headline">Terminal</h3>
+
+  {% highlight ruby %}
+     term = TTY::Terminal.new
+     # => red bold text on green background
+     term.color.set 'text...', :bold, :red, :on_green
+  {% endhighlight %}
+
+</section>
+
+<section id="action-calls" class="section">
+  <p class="center">
+    <a href="https://github.com/peter-murach/tty" class="button">View source on github</a>
+  </p>
+</section>
