@@ -8,3 +8,4 @@ assets:
     js: uglifier
   cachebust: hard
   gzip: [ text/css, application/javascript ]
+exclude: [components, Rakefile, Gemfile, Gemfile.lock]
