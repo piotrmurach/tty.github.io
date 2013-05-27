@@ -1,8 +1,7 @@
 name: TTY
 pygments: true
 assets:
-  soruces:
-    - _assets/fonts
+  baseurl: ../assets/
   compress:
     css: sass
     js: uglifier

@@ -94,7 +94,7 @@ h1, h2, h3 {
       display: block;
       float: left;
       height: 320px;
-      background-image: image-url("tty_logo.png");
+      background-image: asset-url("tty_logo.png");
       background-repeat: no-repeat;
     }
 
@@ -189,13 +189,14 @@ h1, h2, h3 {
 }
 
 .highlight pre:hover {
-
+  background-color: white;
 }
 
 .highlight pre {
   padding: 2em 2em 1.3em;
   @include box-shadow(0 1px 4px #f1f0f0, inset 0 0 0 1px #e7e6e5);
   font-size: 0.9em;
+  background-color: #f4f4f4;
 }
 
 .center {
@@ -207,7 +208,7 @@ h1, h2, h3 {
   background: $main-color;
   color: white;
   text-transform: uppercase;
-  padding: .58em .5em;
+  padding: .65em 1em;
   letter-spacing: 2px;
   @include transition(background .5s ease);
 }
@@ -224,13 +225,12 @@ h1, h2, h3 {
   margin-top: 6em;
   margin-bottom: 4em;
   text-align: center;
-  width: 90%;
   padding-bottom: 2em;
 
   .icon {
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
 
     &.twitter {
       background-image: image-url("icons/twitter-32.png");
@@ -238,6 +238,10 @@ h1, h2, h3 {
 
     &.email {
       background-image: image-url("icons/email-32.png");
+    }
+
+    &.github {
+      background-image: image-url("icons/github-32.png");
     }
   }
 
