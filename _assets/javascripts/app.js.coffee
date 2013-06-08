@@ -7,12 +7,8 @@ $("#main-nav a").on 'click', (event) ->
   event.preventDefault()
   $.scrollTo(this.hash, 600)
 
-$(window).resize () ->
-  if $(this).width() > '600'
-    $("#main-nav").show()
-
 $("#nav-collapse").on 'click', (event) ->
-  $("#main-nav").slideToggle 'slow'
+  $("#main-nav").toggleClass 'hide'
   event.preventDefault()
 
 $(".content header").on 'click', (event) ->

@@ -64,6 +64,8 @@ h1, h2, h3 {
   }
 }
 
+.main-nav.hide { display: block; }
+
 .main-nav {
   text-align: center;
 
@@ -298,6 +300,8 @@ h1, h2, h3 {
 @media all and (max-width: $tablet-size) {
   body {
     font: 400 100%/1.4 'VarelaRegular';
+
+    .main-nav.hide { display: block; }
 
     .content {
       @include column(8);
