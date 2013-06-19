@@ -118,7 +118,7 @@ h1, h2, h3 {
   .intro {
     @include row(8);
     margin: 4em auto;
-    margin-top: 0;
+    margin-top: 2.5em;
 
     .tty-brand {
       @include column(4, 8);
@@ -145,16 +145,13 @@ h1, h2, h3 {
     .tty-blurb {
       @include column(4, 8);
       @include push(2);
-      font-size: 1em;
+      font: 400 1.2em/1.4em 'OpenSansLight';
       margin-top: .8em;
       margin-bottom: 0;
-      line-height: 1.6 * $line-height-baseline;
       text-transform: none;
       text-align: center;
     }
-    margin-top: 5.5em;
   }
-
 
   .section {
     @include row(8);
@@ -211,7 +208,6 @@ h1, h2, h3 {
       background-color: #F05927;
       color: white;
       margin-top: 1em;
-      text-shadow: 0px 0px 5px rgba(0,0,0,.75);
       @include box-shadow(0px 0px 35px rgba(0,0,0,.45));
     }
 
@@ -311,6 +307,7 @@ h1, h2, h3 {
       .intro {
         @include row(8);
         margin: 5em auto;
+        margin-top: 2.5em;
 
         .tty-brand {
           @include column(6, 8);
@@ -325,6 +322,7 @@ h1, h2, h3 {
           @include column(6, 8);
           @include push(1);
           margin-top: .8em;
+          font: 400 1em/1.4em 'OpenSansLight';
         }
       }
 
@@ -428,6 +426,7 @@ h1, h2, h3 {
         .tty-blurb {
           @include column(8, 8);
           margin-top: .4em;
+          font: 400 0.9em/1.4em 'OpenSansLight';
         }
       }
 
