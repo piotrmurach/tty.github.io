@@ -119,6 +119,7 @@ h1, h2, h3 {
     @include row(8);
     margin: 4em auto;
     margin-top: 2.5em;
+    margin-bottom: 7em;
 
     .tty-brand {
       @include column(4, 8);
@@ -143,6 +144,7 @@ h1, h2, h3 {
     }
 
     .tty-blurb {
+      position: relative;
       @include column(4, 8);
       @include push(2);
       font: 400 1.2em/1.4em 'OpenSansLight';
@@ -150,7 +152,19 @@ h1, h2, h3 {
       margin-bottom: 0;
       text-transform: none;
       text-align: center;
+
+      .arrow-down {
+        position: absolute;
+        left: 44%;
+        bottom: -60px;
+        width: 0;
+        height: 0;
+        border-left: 32px solid transparent;
+        border-right: 32px solid transparent;
+        border-top: 32px solid #CCCCCC;
+      }
     }
+
   }
 
   .section {
@@ -323,6 +337,13 @@ h1, h2, h3 {
           @include push(1);
           margin-top: .8em;
           font: 400 1em/1.4em 'OpenSansLight';
+
+          .arrow-down {
+            bottom: -40px;
+            border-left: 24px solid transparent;
+            border-right: 24px solid transparent;
+            border-top: 24px solid #CCCCCC;
+          }
         }
       }
 
@@ -412,6 +433,7 @@ h1, h2, h3 {
       .intro {
         @include row(8);
         margin: 2.5em auto;
+        margin-bottom: 4em;
 
         .tty-brand {
           @include column(8, 8);
@@ -427,6 +449,13 @@ h1, h2, h3 {
           @include column(8, 8);
           margin-top: .4em;
           font: 400 0.9em/1.4em 'OpenSansLight';
+
+          .arrow-down {
+            bottom: -30px;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 18px solid #CCCCCC;
+          }
         }
       }
 
