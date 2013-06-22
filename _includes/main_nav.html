@@ -1,9 +1,9 @@
 <a href="#main-nav" class="nav-collapse" id="nav-collapse">Menu</a>
 <ul id="main-nav" class="main-nav hide">
-  <li class="active"><a href="/">Home</a></li>
-  <li><a href="#features">Features</a></li>
+  <li class="{% if page.section == 'overview' %}active{% endif %}"><a href="/">Home</a></li>
+  <li><a href="{{site.url}}/#features">Features</a></li>
   <li><a href="#quick-start">Quick Start</a></li>
-  <li><a href="{{site.url}}/usage/">Usage</a></li>
-  <li><a href="/">Plugins</a></li>
+  <li class="{%if page.section == 'usage' %}active{% endif %}"><a href="{{site.url}}/usage/">Usage</a></li>
+  <li class="{%if page.section == 'plugins' %}active{% endif %}"><a href="{{site.url}}/plugins/">Plugins</a></li>
   <li><a href="/">API</a></li>
 </ul>
