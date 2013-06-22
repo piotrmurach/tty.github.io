@@ -1,11 +1,11 @@
 ---
 layout: default
 title: TTY • Toolbox for developing CLI clients in Ruby
+section: overview
 ---
-
 <section id="home" class="intro">
   <header>
-    <a href="./" class="tty-brand"><img class="tty-logo" src="assets/{{'tty_logo.png' | asset_path}}" alt="tty logo" /></a>
+    <a href="{{site.url}}" class="tty-brand"><img class="tty-logo" src="assets/{{'tty_logo.png' | asset_path}}" alt="tty logo" /></a>
     <h1>
       <span class="tty-blurb">The Ruby toolbox that you can use for building CLI projects<div class="arrow-down"></div></span>
     </h1>
@@ -52,9 +52,9 @@ title: TTY • Toolbox for developing CLI clients in Ruby
 
   <h3 class="sub-headline">Installation</h3>
 
-  {% highlight ruby %}
-    $ gem install tty
-  {% endhighlight %}
+{% highlight ruby %}
+$ gem install tty
+{% endhighlight %}
 
   <h3 class="sub-headline">Data Tables</h3>
 
@@ -62,33 +62,33 @@ title: TTY • Toolbox for developing CLI clients in Ruby
     Handling of tabular data 
   </p>
 
-  {% highlight ruby %}
-    table = TTY::Table.new header: ['h1', 'h2'], rows: [['a1', 'a2'], ['b1', 'b2']]
-  {% endhighlight %}
+{% highlight ruby %}
+table = TTY::Table.new header: ['h1', 'h2'], rows: [['a1', 'a2'], ['b1', 'b2']]
+{% endhighlight %}
 
   <h3 class="sub-headline">Shell Interactions</h3>
   <p>
     The library provides small DSL to help with parsing and asking precise questions in the shell.
   </p>
 
-  {% highlight ruby %}
-    shell  = TTY::Shell.new
-    shell.ask "What is your name?" do
-      argument :required
-      default  'Piotr'
-      validate /\w+\s\w+/
-      valid    ['Piotr', 'Piotrek']
-      modify   :capitalize
-    end.read_string
-  {% endhighlight %}
+{% highlight ruby %}
+shell  = TTY::Shell.new
+shell.ask "What is your name?" do
+  argument :required
+  default  'Piotr'
+  validate /\w+\s\w+/
+  valid    ['Piotr', 'Piotrek']
+  modify   :capitalize
+end.read_string
+{% endhighlight %}
 
   <h3 class="sub-headline">Terminal</h3>
 
-  {% highlight ruby %}
-     term = TTY::Terminal.new
-     # => red bold text on green background
-     term.color.set 'text...', :bold, :red, :on_green
-  {% endhighlight %}
+{% highlight ruby %}
+term = TTY::Terminal.new
+# => red bold text on green background
+term.color.set 'text...', :bold, :red, :on_green
+{% endhighlight %}
 
 </section>
 
