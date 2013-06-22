@@ -3,7 +3,7 @@
 
 $.scrollTo(0)
 
-$("#main-nav a").on 'click', (event) ->
+$("#main-nav a[href*='#']").on 'click', (event) ->
   event.preventDefault()
   $.scrollTo(this.hash, 600)
 
