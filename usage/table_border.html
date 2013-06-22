@@ -1,0 +1,22 @@
+---
+layout: usage
+title: Table border
+section: usage
+permalink: /usage/table-border/
+---
+
+<p>
+To print border around data table you need to specify renderer type out of basic, ascii, unicode. By default basic is used. For instance, to output unicode border:
+</p>
+
+{% highlight ruby %}
+table = TTY::Table.new ['header1', 'header2'], [['a1', 'a2'], ['b1', 'b2'], renderer: 'unicode'
+  table.to_s
+
+  ┌───────┬───────┐
+  │header1│header2│
+  ├───────┼───────┤
+  │a1     │a2     │
+  │b1     │b2     │
+  └───────┴───────┘
+{% endhighlight %}

@@ -99,6 +99,7 @@ h1, h2, h3 {
   }
 }
 
+
 .banner {
   position: absolute;
   top: 0;
@@ -113,7 +114,7 @@ h1, h2, h3 {
   @include column(8);
   @include transition(margin .5s ease);
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
 
   .intro {
     @include row(8);
@@ -246,6 +247,48 @@ h1, h2, h3 {
     }
 
   }
+
+  .usage {
+    @include column(8);
+    margin: 4em 0;
+
+    .side-nav {
+      @include column(1, 8);
+      @include push(1);
+
+      .nav-header {
+        text-align: left;
+        letter-spacing: 1px;
+        background-color: $main-color;
+        color: white;
+        padding: 10px 15px 9px 10px;
+      }
+
+      ul {
+        float: none;
+
+        li {
+          display: list-item;
+          line-height: 1.4 * $line-height-baseline;
+
+          a {
+            @include transition(all .25s);
+          }
+        }
+      }
+    }
+
+    .page {
+      @include column(5, 8);
+      padding: 0 1em;
+
+      h1 {
+        color: $main-color;
+      }
+
+    }
+
+  } // usage
 }
 
 .highlight pre:hover {

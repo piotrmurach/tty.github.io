@@ -1,0 +1,18 @@
+---
+layout: usage
+title: Table creation
+section: usage
+permalink: /usage/table-creation/
+---
+
+<p>
+To instantiate table pass 2-dimensional array:
+</p>
+
+{% highlight ruby %}
+table = TTY::Table[['a1', 'a2'], ['b1', 'b2']]
+table = TTY::Table.new [['a1', 'a2'], ['b1', 'b2']]
+table = TTY::Table.new rows: [['a1', 'a2'], ['b1', 'b2']]
+table = TTY::Table.new ['h1', 'h2'], [['a1', 'a2'], ['b1', 'b2']]
+table = TTY::Table.new header: ['h1', 'h2'], rows: [['a1', 'a2'], ['b1', 'b2']]
+{% endhighlight %}
