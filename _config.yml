@@ -1,7 +1,8 @@
 name: TTY
 pygments: true
+relative_permalinks: true
 assets:
-  baseurl: ../assets/
+  baseurl: ./
   compress:
     css: sass
     js: uglifier

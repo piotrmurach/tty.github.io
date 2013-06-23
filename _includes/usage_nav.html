@@ -1,8 +1,16 @@
+{% if page.subpage %}
+  {% assign prefix = "../../" %}
+{% elsif page.page %}
+  {% assign prefix = "../" %}
+{% else %}
+  {% assign prefix = "" %}
+{% endif %}
+
 <aside class="side-nav">
-  <a class="small-logo" href="{{site.url}}/"><img class="tty-logo-small" src="{{site.url}}/assets/{{'tty_logo_small.png' | asset_path}}" /></a>
+  <a class="small-logo" href="{{site.url}}/"><img class="tty-logo-small" src="{{ prefix }}assets/{% asset_path tty_logo_small.png %}" /></a>
   <h4 class="nav-header">Table</h4>
   <ul>
-    <li class="{%if page.title == 'table init'%}active{% endif %}">
+    <li class="{%if page.title == 'Table creation'%}active{% endif %}">
       <a href="{{site.url}}/usage/table-creation">Creation</a>
     </li>
     <li>
