@@ -1,0 +1,15 @@
+---
+layout: usage
+title: Terminal Progress Bars
+section: usage
+permalink: /usage/progress_bars/
+subpage: true
+---
+
+<h3>Instatiation</h3>
+
+<p>To create a progress bar:</p>
+
+{% highlight ruby %}
+bar = TTY::ProgressBar.new("downloading [:bar]", total: 30)
+{% endhighlight %}
