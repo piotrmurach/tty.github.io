@@ -145,7 +145,7 @@ table {
 }
 
 .content {
-  @include row(12);
+  @include column(12);
   margin: 0 auto;
   @include transition(margin .5s ease);
 
@@ -166,16 +166,6 @@ table {
         max-width: 100%;
       }
     }
-
-
-    // .tty-name {
-    //   @include column(12);
-    //   color: $main-color;
-    //   font-size: 4.5em;
-    //   letter-spacing: 0.1em;
-    //   text-transform: uppercase;
-    //   line-height: $line-height-baseline;
-    // }
 
     .tty-blurb {
       position: relative;
@@ -201,7 +191,7 @@ table {
   }
 
   .section {
-    @include row(12);
+    @include column(12);
 
     .separator {
       @include column(12);
@@ -246,7 +236,7 @@ table {
 
     &.features-area {
       position: relative;
-      overflow: visible;
+      overflow: hidden;
 
       .features-wrapper {
         @include column(12);
@@ -277,7 +267,7 @@ table {
       @include push(2);
       margin-bottom: 3em;
     }
-  }
+  } // .section
 
   .usage {
     @include column(12);
@@ -285,6 +275,7 @@ table {
 
     .side-nav {
       @include column(3, 12);
+      @include push(1);
 
       .nav-header {
         text-align: left;
@@ -296,10 +287,9 @@ table {
 
       ul {
         float: none;
-
         li {
           display: list-item;
-          line-height: 1.4 * $line-height-baseline;
+          line-height: 1.8 * $line-height-baseline;
 
           a {
             @include transition(all .25s);
@@ -309,7 +299,7 @@ table {
     }
 
     .page {
-      @include column(8.5, 12);
+      @include column(6.5, 12);
       padding: 0 1em;
       margin-top: 4em;
 
@@ -320,7 +310,8 @@ table {
     }
   } // usage
   .plugins {
-    @include column(12);
+    @include column(10, 12);
+    @include push(1);
 
     h1 {
       margin-top: 2em;
@@ -403,17 +394,17 @@ table {
     .main-nav.hide { display: block; }
 
     .content {
-      @include column(8);
+      @include column(12);
       width: 100%;
       margin: 0;
 
       .intro {
-        @include row(8);
+        @include row(12);
         margin: 5em auto;
         margin-top: 2.5em;
 
         .tty-brand {
-          @include column(6, 8);
+          @include column(10, 12);
           @include push(1);
 
           .tty-logo {
@@ -422,7 +413,7 @@ table {
         }
 
         .tty-blurb {
-          @include column(6, 8);
+          @include column(10, 12);
           @include push(1);
           margin-top: .8em;
           font: 400 1em/1.4em 'OpenSansLight';
@@ -437,51 +428,51 @@ table {
       }
 
       .section {
-        @include row(8);
+        @include row(12);
 
         .headline {
-          @include column(6, 8);
+          @include column(10, 12);
           @include push(1);
           margin-bottom: .8em;
         }
 
         .sub-headline {
-          @include column(6, 8);
+          @include column(10, 12);
           @include push(1);
           margin-bottom: .8em;
           letter-spacing: 1px;
         }
 
         .separator {
-          @include column(6, 8);
+          @include column(10, 12);
           @include push(1);
         }
 
         p {
-          @include column(6, 8);
+          @include column(10, 12);
           @include push(1);
           margin-bottom: 1.5em;
         }
 
         .features-wrapper {
-          @include row(8);
+          @include row(12);
 
           .column-1 {
-            @include column(3, 8);
+            @include column(4, 12);
             @include push(1);
             margin-top: 2em;
             margin-bottom: 1.4em;
           }
 
           .column-2 {
-            @include column(3, 8);
+            @include column(4, 12);
             margin-top: 2em;
             margin-bottom: 1.4em;
           }
         }
 
         pre {
-          @include column(6, 8);
+          @include column(10, 12);
           @include push(1);
           margin-bottom: 3em;
         }
@@ -514,18 +505,18 @@ table {
     }
 
     .content {
-      @include column(8);
+      @include column(12);
       padding: 0 .4em 0 .4em;
       width: 100%;
       margin: 0;
 
       .intro {
-        @include row(8);
+        @include row(12);
         margin: 2.5em auto;
         margin-bottom: 4em;
 
         .tty-brand {
-          @include column(8, 8);
+          @include column(12, 12);
           margin-bottom: 2 * $line-height-baseline;
           padding-left: 0;
 
@@ -535,7 +526,7 @@ table {
         }
 
         .tty-blurb {
-          @include column(8, 8);
+          @include column(12, 12);
           margin-top: .4em;
           font: 400 0.9em/1.4em 'OpenSansLight';
 
@@ -549,47 +540,56 @@ table {
       }
 
       .section {
-        @include row(8);
+        @include row(12);
 
         li span {
           padding-left: 2%;
         }
 
         .headline {
-          @include column(8, 8);
+          @include column(12, 12);
           margin-bottom: .4em;
         }
 
         .sub-headline {
-          @include column(8, 8);
+          @include column(12, 12);
           margin-bottom: .4em;
           letter-spacing: 1px;
         }
 
         p {
-          @include column(8, 8);
+          @include column(12, 12);
           margin-bottom: 0.7em;
         }
 
         .features-wrapper {
-          @include row(8);
+          @include row(12);
 
           .column-1 {
-            @include column(8, 8);
+            @include column(12, 12);
             margin-top: 2em;
             margin-bottom: 1.4em;
           }
 
           .column-2 {
-            @include column(8, 8);
+            @include column(12, 12);
           }
         }
 
         pre {
-          @include column(8, 8);
+          @include column(12, 12);
           margin-bottom: 3em;
         }
       }
+      .usage {
+        @include column(12);
+        .side-nav {
+          @include column(12, 12);
+        }
+        .page {
+          @include column(8.5, 12);
+        }
+      } // usage
     }
   }
 }
