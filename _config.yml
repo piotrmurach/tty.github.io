@@ -1,6 +1,6 @@
 name: TTY
-pygments: true
-relative_permalinks: true
+highlighter: pygments
+relative_permalinks: false
 google_analytics_id: UA-31255537-2
 assets:
   baseurl: ./
