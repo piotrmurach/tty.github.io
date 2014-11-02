@@ -37,9 +37,43 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
+table {
+  width: 100%;
+  border: 1px solid #DDDDDD;
+  border-left: 0;
+  border-collapse: separate;
+  border-radius: 4px;
+  thead {
+    line-height: 1.6em;
+  }
+  th {
+    font-weight: bold;
+    border-left: 1px solid #DDDDDD;
+    padding: 12px;
+    line-height: 20px;
+    &.name {
+      width: 50%;
+    }
+  }
+  tbody {
+    tr {
+      margin: 5px 0;
+      text-align: center;
+    }
+    td {
+      border-left: 1px solid #DDDDDD;
+      padding: 12px;
+      line-height: 20px;
+      border-top: 1px solid #DDDDDD;
+    }
+  }
+}
 .container {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+}
+.site {
+  margin: 0 auto;
 }
 
 .nav-collapse {
@@ -67,6 +101,8 @@ h1, h2, h3 {
 .main-nav.hide { display: block; }
 
 .main-nav {
+  margin: 0;
+  padding: 0;
   text-align: center;
 
   li {
@@ -99,7 +135,6 @@ h1, h2, h3 {
   }
 }
 
-
 .banner {
   position: absolute;
   top: 0;
@@ -110,21 +145,18 @@ h1, h2, h3 {
 }
 
 .content {
-  overflow: hidden;
-  @include column(8);
-  @include transition(margin .5s ease);
-  width: 100%;
+  @include row(12);
   margin: 0 auto;
+  @include transition(margin .5s ease);
 
   .intro {
-    @include row(8);
+    @include column(12);
     margin: 4em auto;
     margin-top: 2.5em;
     margin-bottom: 7em;
 
     .tty-brand {
-      @include column(4, 8);
-      @include push(2);
+      @include column(12);
       display: block;
       float: left;
       text-align: center;
@@ -135,18 +167,19 @@ h1, h2, h3 {
       }
     }
 
-    .tty-name {
-      @include column(4, 8);
-      color: $main-color;
-      font-size: 4.5em;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      line-height: $line-height-baseline;
-    }
+
+    // .tty-name {
+    //   @include column(12);
+    //   color: $main-color;
+    //   font-size: 4.5em;
+    //   letter-spacing: 0.1em;
+    //   text-transform: uppercase;
+    //   line-height: $line-height-baseline;
+    // }
 
     .tty-blurb {
       position: relative;
-      @include column(4, 8);
+      @include column(8, 12);
       @include push(2);
       font: 400 1.2em/1.4em 'OpenSansLight';
       margin-top: .8em;
@@ -165,21 +198,19 @@ h1, h2, h3 {
         border-top: 32px solid #CCCCCC;
       }
     }
-
   }
 
   .section {
-    @include row(8);
+    @include row(12);
 
     .separator {
-      @include column(4, 8);
-      @include push(2);
+      @include column(12);
       padding-bottom: 1.7em;
       margin-bottom: 3em;
     }
 
     .headline {
-      @include column(4, 8);
+      @include column(8, 12);
       @include push(2);
       color: $main-color;
       margin-bottom: .8em;
@@ -187,20 +218,17 @@ h1, h2, h3 {
       text-transform: uppercase;
       letter-spacing: -.05em;
       font-size: 2em;
-
-      &:hover {
-      }
     }
 
     .sub-headline {
-      @include column(4, 8);
+      @include column(8, 12);
       @include push(2);
       margin-bottom: .8em;
       letter-spacing: 1px;
     }
 
     p {
-      @include column(4, 8);
+      @include column(8, 12);
       @include push(2);
       margin-bottom: 1.5em;
       line-height: 1.8 * $line-height-baseline;
@@ -214,47 +242,49 @@ h1, h2, h3 {
       margin-bottom: 1.4em;
       list-style: circle;
       line-height: 1.8em;
-      span {
+    }
+
+    &.features-area {
+      position: relative;
+      overflow: visible;
+
+      .features-wrapper {
+        @include column(12);
+        width: 100%;
+        background-color: $features-color;
+        color: white;
+        margin-top: 1em;
+        @include box-shadow(0px 0px 35px rgba(0,0,0,.45));
+
+        .column-1 {
+          @include column(4, 12);
+          @include push(2);
+          margin-top: 2em;
+          margin-bottom: 1.4em;
+          margin-right: 2em;
+        }
+
+        .column-2 {
+          @include column(4, 12);
+          margin-top: 2em;
+          margin-bottom: 1.4em;
+        }
       }
     }
 
-    .features-wrapper {
-      @include column(8,8);
-      background-color: $features-color;
-      color: white;
-      margin-top: 1em;
-      @include box-shadow(0px 0px 35px rgba(0,0,0,.45));
-    }
-
-    .column-1 {
-      @include column(2, 8);
-      @include push(2);
-      margin-top: 2em;
-      margin-bottom: 1.4em;
-      margin-right: 2em;
-    }
-
-    .column-2 {
-      @include column(2, 8);
-      margin-top: 2em;
-      margin-bottom: 1.4em;
-    }
-
     pre {
-      @include column(4, 8);
+      @include column(8, 12);
       @include push(2);
       margin-bottom: 3em;
     }
-
   }
 
   .usage {
-    @include column(8);
-    margin: 4em 0;
+    @include column(12);
+    margin: 0 auto;
 
     .side-nav {
-      @include column(1, 8);
-      @include push(1);
+      @include column(3, 12);
 
       .nav-header {
         text-align: left;
@@ -279,16 +309,30 @@ h1, h2, h3 {
     }
 
     .page {
-      @include column(5, 8);
+      @include column(8.5, 12);
       padding: 0 1em;
+      margin-top: 4em;
 
       h1 {
         color: $main-color;
       }
 
     }
-
   } // usage
+  .plugins {
+    @include column(12);
+
+    h1 {
+      margin-top: 2em;
+      color: $main-color;
+    }
+
+    .tty-branding {
+      float: left;
+      padding: 0 2em 2em 0;
+    }
+
+  } // plugins
 }
 
 .highlight pre:hover {
@@ -324,7 +368,9 @@ h1, h2, h3 {
 }
 
 .footer {
-  @include column(8);
+  display: inline;
+  float: left;
+  width: 100%;
   margin-top: 6em;
   margin-bottom: 4em;
   text-align: center;
