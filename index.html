@@ -7,12 +7,12 @@ section: overview
   <header>
   <a href="{{site.url}}" class="tty-brand"><img class="tty-logo" src="assets/{% asset_path tty_logo.png %}" alt="tty logo" /></a>
     <h1>
-      <span class="tty-blurb">The Ruby toolbox that you can use for building CLI projects<div class="arrow-down"></div></span>
+      <span class="tty-blurb">The Ruby toolbox that you can<br/> use for building CLI projects<div class="arrow-down"></div></span>
     </h1>
   </header>
 </section>
 
-<section id="features" class="section">
+<section id="features" class="section features-area">
   <header>
     <h2 class='headline'>Features</h2>
   </header>
@@ -23,17 +23,17 @@ section: overview
 
   <div class='features-wrapper'>
     <ul class="column-1">
-      <li><span>Table rendering with an easy-to-use API.</span></li>
+      <li><span>Table rendering with an intuitive API.</span></li>
       <li><span>Terminal output colorization.</span></li>
-      <li><span>Terminal & System detection utilities.</span></li>
-      <li><span>Text manipulation (wrapping/truncation).</span></li>
+      <li><span>Terminal &amp; System detection utilities.</span></li>
+      <li><span>Terminal progress bars drawing.</span></li>
       <li><span>Shell user interface.</span></li>
     </ul>
     <ul class="column-2">
+      <li><span>Terminal output paging.</span></li>
       <li><span>Configuration file management.</span></li>
       <li><span>Multilevel logger.</span></li>
       <li><span>Plugin ecosystem.</span></li>
-      <li><span>No dependencies to allow for easy gem vendoring.</span></li>
       <li><span>Fully tested with major ruby interpreters.</span></li>
     </ul>
   </div>
@@ -56,20 +56,19 @@ section: overview
 $ gem install tty
 {% endhighlight %}
 
-  <h3 class="sub-headline">Data Tables</h3>
-
-  <p>
-    Handling of tabular data 
-  </p>
+<h3 class="sub-headline">Data Tables</h3>
+<p>
+  Handling of tabular data 
+</p>
 
 {% highlight ruby %}
 table = TTY::Table.new header: ['h1', 'h2'], rows: [['a1', 'a2'], ['b1', 'b2']]
 {% endhighlight %}
 
-  <h3 class="sub-headline">Shell Interactions</h3>
-  <p>
-    The library provides small DSL to help with parsing and asking precise questions in the shell.
-  </p>
+<h3 class="sub-headline">Shell Interactions</h3>
+<p>
+  The library provides small DSL to help with parsing and asking precise questions in the shell.
+</p>
 
 {% highlight ruby %}
 shell  = TTY::Shell.new
