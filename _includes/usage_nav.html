@@ -7,56 +7,14 @@
 {% endif %}
 
 <aside class="side-nav">
-  <a class="small-logo" href="{{site.url}}/"><img class="tty-logo-small" src="{{ prefix }}assets/{% asset_path tty_logo_small.png %}" /></a>
-  <h4 class="nav-header">Table</h4>
+  <a class="tty-branding" href="{{site.url}}/"><img class="tty-logo-small" src="{{ prefix }}assets/{% asset_path tty_logo_medium.png %}" /></a>
+  <h4 class="nav-header">Documentation</h4>
   <ul>
     <li class="{%if page.title == 'Table creation'%}active{% endif %}">
-      <a href="{{ prefix }}usage/table-creation/">Creation</a>
+      <a href="{{ prefix }}usage/tables/">Creating Tables</a>
     </li>
     <li>
-      <a href="{{ prefix }}usage/table-border/">Border</a>
-    </li>
-    <li>
-      <a href="{{ prefix }}usage/table-alignment/">Alignment</a>
-    </li>
-    <li>
-      <a href="{{ prefix }}usage/table-style/">Style</a>
-    </li>
-    <li>
-      <a href="{{ prefix }}usage/table-filter/">Filter</a>
-    </li>
-  </ul>
-  <h4 class="nav-header">Terminal</h4>
-  <ul>
-    <li>
-      <a href="">Properties</a>
-    </li>
-    <li>
-      <a href="">Color</a>
-    </li>
-    <li>
-      <a href="">Pager</a>
-    </li>
-  </ul>
-  <h4 class="nav-header">Shell</h4>
-  <ul>
-    <li>
-      <a href="">Say</a>
-    </li>
-    <li>
-      <a href="">Ask Suestion</a>
-    </li>
-    <li>
-      <a href="">Suggest</a>
-    </li>
-  </ul>
-  <h4 class="nav-header">System</h4>
-  <ul>
-    <li>
-      <a href="">Platform</a>
-    </li>
-    <li>
-      <a href="">Which</a>
+      <a href="{{ prefix }}usage/progress_bars/">Creating Progress bars</a>
     </li>
   </ul>
 </aside>
