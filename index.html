@@ -81,7 +81,41 @@ shell.ask "What is your name?" do
 end.read_string
 {% endhighlight %}
 
-  <h3 class="sub-headline">Terminal</h3>
+<h3 class="sub-headline">Progress bars</h3>
+<p>
+  You can easily indicate progress for various tasks.
+</p>
+
+{% highlight ruby %}
+bar = TTY::ProgressBar.new("downloading [:bar]", total: 30)
+30.times do
+  sleep(0.1)
+  bar.advance(1)
+end
+{% endhighlight %}
+
+<p class="center">
+  <a href="https://github.com/peter-murach/tty-progressbar" class="button">Learn more</a>
+</p>
+
+<h3 class="sub-headline">Spinners</h3>
+<p>
+  To easily indicate non-deterministic actions use spinner.
+</p>
+
+{% highlight ruby %}
+spinner = TTY::Spinner.new('Loading ... ', format: :spin_2)
+30.times do
+  spinner.spin
+  sleep(0.1)
+end
+{% endhighlight %}
+
+<p class="center">
+  <a href="https://github.com/peter-murach/tty-spinner" class="button">Learn more</a>
+</p>
+
+<h3 class="sub-headline">Terminal</h3>
 
 {% highlight ruby %}
 term = TTY::Terminal.new
