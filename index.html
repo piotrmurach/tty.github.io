@@ -58,12 +58,24 @@ $ gem install tty
 
 <h3 class="sub-headline">Data Tables</h3>
 <p>
-  Handling of tabular data 
+  TTY has component for handling of tabular data and displaying it using flexible rendering capabilities.
 </p>
 
 {% highlight ruby %}
 table = TTY::Table.new header: ['h1', 'h2'], rows: [['a1', 'a2'], ['b1', 'b2']]
+table.render(:ascii)
+# =>
+  +-------+-------+
+  |header1|header2|
+  +-------+-------+
+  |a1     |a2     |
+  |b1     |b2     |
+  +-------+-------+
 {% endhighlight %}
+
+<p class="center">
+  <a href="https://github.com/peter-murach/tty-table#ttytable" class="button">Learn more</a>
+</p>
 
 <h3 class="sub-headline">Shell Interactions</h3>
 <p>
@@ -95,7 +107,7 @@ end
 {% endhighlight %}
 
 <p class="center">
-  <a href="https://github.com/peter-murach/tty-progressbar" class="button">Learn more</a>
+  <a href="https://github.com/peter-murach/tty-progressbar#ttyprogressbar" class="button">Learn more</a>
 </p>
 
 <h3 class="sub-headline">Spinners</h3>
@@ -112,16 +124,34 @@ end
 {% endhighlight %}
 
 <p class="center">
-  <a href="https://github.com/peter-murach/tty-spinner" class="button">Learn more</a>
+  <a href="https://github.com/peter-murach/tty-spinner#ttyspinner" class="button">Learn more</a>
 </p>
 
-<h3 class="sub-headline">Terminal</h3>
+<h3 class="sub-headline">Screen properties</h3>
+<p>TTY allows you easily determine screen properties:</p>
 
 {% highlight ruby %}
-term = TTY::Terminal.new
-# => red bold text on green background
-term.color.set 'text...', :bold, :red, :on_green
+screen = TTY::Screen.new
+screen.size     # => [51, 280]
+screen.width    # => 280
+screen.height   # => 51
 {% endhighlight %}
+
+<p class="center">
+  <a href="https://github.com/peter-murach/tty-screen#ttyscreen" class="button">Learn more</a>
+</p>
+
+<h3 class="sub-headline">Terminal Coloring</h3>
+<p>TTY helps with coloring terminal output.</p>
+
+{% highlight ruby %}
+pastel = Pastel.new
+pastel.red.on_green.bold('Unicorns!')
+{% endhighlight %}
+
+<p class="center">
+  <a href="https://github.com/peter-murach/pastel#pastel" class="button">Learn more</a>
+</p>
 
 </section>
 
