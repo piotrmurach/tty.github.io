@@ -359,30 +359,28 @@ table {
 }
 
 .footer {
-  display: inline;
+  position: relative;
+  display: block;
   float: left;
   width: 100%;
   margin-top: 6em;
   margin-bottom: 4em;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   padding-bottom: 2em;
 
   .icon {
     display: inline-block;
+    background-repeat: no-repeat;
     width: 48px;
     height: 48px;
+    margin-left: 8px;
 
-    &.twitter {
-      background-image: image-url("icons/twitter-32.png");
-    }
-
-    &.email {
-      background-image: image-url("icons/email-32.png");
-    }
-
-    &.github {
-      background-image: image-url("icons/github-32.png");
-    }
+    &.twitter { background-image: image-url("icons/twitter-48.png"); }
+    &.email   { background-image: image-url("icons/email-32.png"); }
+    &.github  { background-image: image-url("icons/github-48.png"); }
+    &.linkedin { background-image: image-url("icons/linkedin-48.png"); }
   }
 
 }
