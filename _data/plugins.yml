@@ -1,0 +1,24 @@
+---
+- name: pastel
+  desc: Terminal strings styling with intuitive and clean API.
+- name: tty-color
+  desc: Terminal color capabilities detection.
+- name: tty-cursor
+  desc: Move terminal cursor around.
+- name: tty-pager
+  desc: Terminal output paging in a cross-platform way.
+- name: tty-platform
+  desc: Detecting different operating systems.
+- name: tty-progressbar
+  desc: A flexible progress bars drawing in terminal emulators.
+- name: tty-prompt
+  desc: A robust command line prompt.
+- name: tty-screen
+  desc: Terminal screen properties detection.
+- name: tty-spinner
+  desc: A terminal spinner for tasks with non-deterministic time.
+- name: tty-table
+  desc: A flexible and intuitive table output generator.
+- name: tty-which
+  desc: Platform independent implementation of Unix which command.
+

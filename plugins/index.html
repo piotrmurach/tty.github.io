@@ -30,49 +30,11 @@ page: true
     </tr>
   </thead>
   <tbody>
+    {% for plugin in site.data.plugins %}
     <tr>
-      <td><a href="http://rubygems.org/gems/pastel">pastel</a></td>
-      <td>Terminal strings styling with intuitive and clean API.</td>
+      <td><a href="http://github.com/peter-murach/{{ plugin.name }}">{{ plugin.name }}</a></td>
+      <td>{{ plugin.desc }}</td>
     </tr>
-    <tr>
-      <td><a href="https://github.com/peter-murach/tty-color">tty-color</a></td>
-      <td>Terminal color capabilities detection.</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/peter-murach/tty-cursor">tty-cursor</a></td>
-      <td>Move terminal cursor around.</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/peter-murach/tty-pager">tty-pager</a></td>
-      <td>Terminal output paging in a cross-platform way.</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/peter-murach/tty-platform">tty-platform</a></td>
-      <td>Detecting different operating systems.</td>
-    </tr>
-    <tr>
-      <td><a href="http://rubygems.org/gems/tty-progressbar">tty-progressbar</a></td>
-      <td>A flexible progress bars drawing in terminal emulators.</td>
-    </tr>
-    <tr>
-      <td><a href="http://rubygems.org/gems/tty-prompt">tty-prompt</a></td>
-      <td>A robust command line prompt.</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/peter-murach/tty-screen">tty-screen</a></td>
-      <td>Terminal screen properties detection</td>
-    </tr>
-    <tr>
-      <td><a href="http://rubygems.org/gems/tty-spinner">tty-spinner</a></td>
-      <td>A terminal spinner for tasks with non-deterministic time.</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/peter-murach/tty-table">tty-table</a></td>
-      <td>A flexible and intuitive table output generator.</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/peter-murach/tty-which">tty-which</a></td>
-      <td>Platform independent implementation of Unix which command.</td>
-    </tr>
+    {% endfor %}
   </tbody>
 </table>
