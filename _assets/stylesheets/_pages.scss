@@ -44,6 +44,7 @@ table {
   border-left: 0;
   border-collapse: separate;
   border-radius: 4px;
+  text-align: left;
   thead {
     line-height: 1.6em;
   }
@@ -52,18 +53,18 @@ table {
     border-left: 1px solid #DDDDDD;
     padding: 12px;
     line-height: 20px;
-    &.name {
-      width: 50%;
-    }
+    text-align: left;
   }
   tbody {
     tr {
       margin: 5px 0;
-      text-align: center;
+      &:nth-of-type(odd) {
+        background-color: #F9F9F9;
+      }
     }
     td {
       border-left: 1px solid #DDDDDD;
-      padding: 12px;
+      padding: 0.5em;
       line-height: 20px;
       border-top: 1px solid #DDDDDD;
     }
@@ -310,18 +311,26 @@ table {
 
     }
   } // usage
+
   .plugins {
     @include column(10, 12);
     @include push(1);
+    text-align: center;
 
     h1 {
-      margin-top: 2em;
-      color: $main-color;
+      text-align: left;
+      color: $main-color; 
+    }
+    p {
+      text-align: left;
     }
 
     .tty-branding {
-      float: left;
-      padding: 0 2em 2em 0;
+      display: inline-block;
+      margin-top: 3em;
+      .tty-logo-small {
+        width: 200px;
+      }
     }
 
   } // plugins
