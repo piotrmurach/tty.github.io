@@ -1,7 +1,13 @@
 <a href="#main-nav" class="nav-collapse" id="nav-collapse">Menu</a>
 <ul id="main-nav" class="main-nav hide">
-  <li class="{% if page.section == 'overview' %}active{% endif %}"><a href="{{prefix}}">Home</a></li>
-  <li class="{%if page.section == 'usage' %}active{% endif %}"><a href="{{ prefix }}usage/">Usage</a></li>
-  <li class="{%if page.section == 'plugins' %}active{% endif %}"><a href="{{ prefix }}plugins/">Plugins</a></li>
-  <li><a href="/">API</a></li>
+  <li class="nav-link {% if page.section == 'overview' %}active{% endif %}"><a href="{{prefix}}">Home</a></li>
+  <li class="nav-link {%if page.section == 'usage' %}active{% endif %}"><a href="{{ prefix }}usage/">Usage</a></li>
+  <li class="nav-link {%if page.section == 'plugins' %}active{% endif %}"><a href="{{ prefix }}plugins/">Plugins</a></li>
+  <li class='nav-link more' id='dropdown-button'><a href="javascript:void(0)">API</a>
+    <ul class='dropdown-menu'>
+      {% for plugin in site.data.plugins %}
+        <li><a href="http://www.rubydoc.info/gems/{{ plugin.name }}">{{plugin.name}}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
 </ul>
