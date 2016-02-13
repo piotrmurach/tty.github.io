@@ -1,21 +1,18 @@
 body {
   font: 400 112.5%/1.4 'VarelaRegular';
-  color: $font-color;
-  display: block;
+  @include max-screen($tablet-size) { font: 400 100%/1.4 'VarelaRegular'; }
+  @include max-screen($mobile-size) { font: 400 90%/1.4 'VarelaRegular'; }
   @include transition(font-size .5s ease);
-  overflow-x: hidden;
+  color: $font-color;
 }
 
 a {
+  @include transition(color .5s ease);
   text-decoration: none;
   color: $main-color;
-  @include transition(color .5s ease);
-}
-a:visited {
-  color: $main-color;
-}
-a:hover {
-  color: $main-dark-color;
+
+  &:visited { color: $main-color; }
+  &:hover   { color: $main-dark-color; }
 }
 
 ul {
@@ -73,8 +70,11 @@ table {
 
 .container {
   margin: 0 auto;
-  padding: 0 1em;
-  max-width: 30em; // 64em;
+  padding: 0;
+  @include max-screen($tablet-size) {
+    padding: 0 1em;
+  }
+  max-width: 54em;
   @include clearfix();
 }
 
@@ -83,6 +83,10 @@ table {
   width: 100%;
   padding: 0.625em 0;
   display: none;
+  @include max-screen($mobile-size) {
+    padding-left: 1em;
+    display: block;
+  }
 
   &:after {
     content: "";
@@ -100,14 +104,38 @@ table {
   }
 }
 
-.main-nav.hide { display: block; }
+nav[role="navigation"] {
+  @include max-screen($mobile-size) {
+    li {
+      width: 100%;
+      margin-left: 0;
+      text-align: left;
+      display: block;
+      z-index: 999;
+    }
+
+    a {
+      border-bottom: 1px solid white;
+      background: $main-color;
+      color: white;
+      margin: 0;
+    }
+  }
+}
+
+.main-nav.hide {
+  display: block;
+  @include max-screen($mobile-size) { display: none; }
+}
+
 .main-nav {
-  float: left;
+  position: relative;
+  display: block;
   width: 100%;
   margin: 0px;
   padding: 0px;
   text-align: center;
-  z-index: 100;
+  z-index: 9999;
 
   li {
     margin-left: .8em;
@@ -121,7 +149,7 @@ table {
     a {
       @include transition(background .5s ease);
       margin: 0;
-      padding: 2.4em .4em .8em;
+      padding: 2.4em 1em .8em;
       font-size: 1.1em;
       font-weight: 400;
       letter-spacing: 1px;
@@ -157,14 +185,13 @@ table {
     display: none;
     overflow: hidden;
     position: absolute;
-    border: 1px solid #e35239;
-    border-radius: 3px;
     top: 5em;
     width: 10em;
     text-align: left;
     z-index: 9999;
     background-color: #FFFFFF;
     padding: 5px 0;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.45);
 
     @include max-screen($mobile-size) {
       position: relative;
@@ -221,15 +248,34 @@ table {
 
 .intro {
   position: relative;
-  @include column(12);
-  margin-top: 4em;
   margin-bottom: 6em;
   text-align: center;
 
+  @include max-screen($tablet-size) {
+    margin-bottom: 5em
+  }
+  @include max-screen($mobile-size) {
+    margin-bottom: 4em;
+  }
+
   .intro-brand {
-    display: block;
-    @include row(12);
+    display: inline;
     margin: 0 auto;
+    max-width: 200px;
+
+    @include max-screen($mobile-size) {
+      margin-bottom: 2 * $line-height-baseline;
+    }
+  }
+
+  .intro-logo {
+    padding-top: 3em;
+    @include max-screen($tablet-size) {
+      height: 12em;
+    }
+    @include max-screen($mobile-size) {
+      height: 8em;
+    }
   }
 
   .intro-blurb {
@@ -239,6 +285,16 @@ table {
     margin-bottom: 0.8em;
     text-transform: none;
     text-align: center;
+
+    @include max-screen($tablet-size) {
+      margin-top: .8em;
+      font: 400 1.6em/1.4em 'OpenSansLight';
+    }
+
+    @include max-screen($mobile-size) {
+      margin-top: .4em;
+      font: 400 1.4em/1.4em 'OpenSansLight';
+    }
 
     &:after {
       content: '';
@@ -251,45 +307,30 @@ table {
       border-left: 32px solid transparent;
       border-right: 32px solid transparent;
       border-top: 32px solid #CCCCCC;
+
+      @include max-screen($tablet-size) {
+        bottom: -40px;
+        border-left: 24px solid transparent;
+        border-right: 24px solid transparent;
+        border-top: 24px solid #CCCCCC;
+      }
+
+      @include max-screen($mobile-size) {
+        bottom: -30px;
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-top: 18px solid #CCCCCC;
+      }
     }
   }
 }
 
-.section {
+.features-wrapper {
+  position: relative;
   width: 100%;
-  height: auto;
-
-  .separator {
-    @include column(12);
-    padding-bottom: 1.7em;
-    margin-bottom: 3em;
-  }
-
-  .headline {
-    @include column(8, 12);
-    @include push(2);
-    color: $main-color;
-    margin-bottom: .8em;
-    line-height: $line-height-baseline;
-    text-transform: uppercase;
-    letter-spacing: -.05em;
-    font-size: 2em;
-  }
-
-  .sub-headline {
-    @include column(8, 12);
-    @include push(2);
-    margin-bottom: .8em;
-    letter-spacing: 1px;
-  }
-
-  p {
-    @include column(8, 12);
-    @include push(2);
-    margin-bottom: 1.5em;
-    line-height: 1.8 * $line-height-baseline;
-    font-size: 0.9em;
-  }
+  background-color: $features-color;
+  color: white;
+  box-shadow: 0px 0px 35px rgba(0,0,0,.45);
 
   li {
     display: list-item;
@@ -300,61 +341,98 @@ table {
     line-height: 1.8em;
   }
 
-  &.features-area {
-    position: relative;
+  .column {
+    @include column(5.6, 12);
+    margin-top: 2em;
+    margin-bottom: 1.4em;
 
-    .features-wrapper {
-      position: relative;
-      float: left;
-      width: 100%;
-      background-color: $features-color;
-      color: white;
-      margin-top: 1em;
-      margin: 0px;
-      margin: 0 -600rem;
-      padding: 0 600rem;
-      box-shadow: 0px 0px 35px rgba(0,0,0,.45);
-
-      .column-1 {
-        @include column(4, 12);
-        @include push(2);
-        margin-top: 2em;
-        margin-bottom: 1.4em;
-        margin-right: 2em;
-      }
-
-      .column-2 {
-        @include column(4, 12);
-        margin-top: 2em;
-        margin-bottom: 1.4em;
-      }
+    @include max-screen($mobile-size) {
+      @include column(12);
+      padding-left: 1em;
     }
   }
-
-  pre {
-    @include column(8, 12);
-    @include push(2);
-    margin-bottom: 3em;
+  .column-1 {
+    margin-right: 2em;
   }
-} // .section
+}
+
+.separator {
+  padding-bottom: 1.7em;
+  margin-bottom: 3em;
+}
+
+.headline {
+  color: $main-color;
+  margin-bottom: .8em;
+  line-height: $line-height-baseline;
+  text-transform: uppercase;
+  letter-spacing: -.05em;
+  font-size: 2em;
+
+  @include max-screen($tablet-size) {
+    margin-bottom: .8em;
+  }
+  @include max-screen($mobile-size) {
+    margin-bottom: .4em;
+  }
+}
+
+.sub-headline {
+  display: block;
+  margin-bottom: .8em;
+  letter-spacing: 1px;
+  width: 100%;
+
+  @include max-screen($mobile-size) {
+    margin-bottom: .4em;
+    letter-spacing: 1px;
+  }
+}
+
+p {
+  margin-bottom: 1.5em;
+  line-height: 1.8 * $line-height-baseline;
+  font-size: 0.9em;
+
+  @include max-screen($mobile-size) {
+    margin-bottom: 0.7em;
+  }
+}
+
+pre {
+  margin-bottom: 3em;
+}
+
+.section {
+  width: 100%;
+  height: auto;
+
+}
 
 .tty-branding {
   display: block;
   text-align: center;
-  margin-top: 9em;
 
   .tty-logo-small {
-    width: 200px;
+    max-width: 200px;
+    padding-top: 4em;
+
+    @include max-screen($mobile-size) {
+      padding-top: 3em;
+      height: 8em;
+    }
   }
 }
 
 .usage {
   margin: 0 auto;
 
-
   .side-nav {
     @include column(3, 12);
-    @include push(1);
+
+    @include max-screen($mobile-size) {
+      @include column(12);
+    }
 
     .nav-header {
       text-align: left;
@@ -370,20 +448,21 @@ table {
         display: list-item;
         line-height: 1.8 * $line-height-baseline;
 
-        a {
-          @include transition(all .25s);
-        }
+        a { @include transition(all .25s); }
       }
     }
   }
 
   .page {
-    @include column(6.5, 12);
+    @include column(8, 12);
+    @include max-screen($mobile-size)  {
+      @include column(12);
+    }
     padding: 0 1em;
 
     h1 { color: $main-color; }
   }
-} // usage
+}
 
 .plugins {
   text-align: center;
@@ -393,7 +472,7 @@ table {
   }
 
   p { text-align: left; }
-} // plugins
+}
 
 .highlight pre:hover {
   background-color: white;
@@ -452,169 +531,5 @@ table {
     &.email   { background-image: image-url("icons/email-32.png"); }
     &.github  { background-image: image-url("icons/github-48.png"); }
     &.linkedin { background-image: image-url("icons/linkedin-48.png"); }
-  }
-}
-
-@media all and (max-width: $tablet-size) {
-  body {
-    font: 400 100%/1.4 'VarelaRegular';
-
-    .main-nav.hide { display: block; }
-
-    .intro {
-      margin: 5em auto;
-      margin-top: 2.5em;
-
-      .intro-logo { height: 15em; }
-
-      .intro-blurb {
-        margin-top: .8em;
-        font: 400 1.6em/1.4em 'OpenSansLight';
-
-        &:after {
-          bottom: -40px;
-          border-left: 24px solid transparent;
-          border-right: 24px solid transparent;
-          border-top: 24px solid #CCCCCC;
-        }
-      }
-    }
-
-    .section {
-      .headline {
-        @include column(10, 12);
-        @include push(1);
-        margin-bottom: .8em;
-      }
-
-      .sub-headline {
-        @include column(10, 12);
-        @include push(1);
-        margin-bottom: .8em;
-        letter-spacing: 1px;
-      }
-
-      .separator {
-        @include column(10, 12);
-        @include push(1);
-      }
-
-      p {
-        @include column(10, 12);
-        @include push(1);
-        margin-bottom: 1.5em;
-      }
-
-      .features-wrapper {
-        @include row(12);
-
-        .column-1 {
-          @include column(4, 12);
-          @include push(1);
-          margin-top: 2em;
-          margin-bottom: 1.4em;
-        }
-
-        .column-2 {
-          @include column(4, 12);
-          margin-top: 2em;
-          margin-bottom: 1.4em;
-        }
-      }
-
-      pre {
-        @include column(9);
-        @include push(1);
-        margin-bottom: 3em;
-      }
-    }
-  }
-}
-
-@media all and (max-width: $mobile-size) {
-  body {
-    font: 400 90%/1.4 'VarelaRegular';
-
-    .nav-collapse { display: block; }
-
-    .main-nav.hide { display: none; }
-
-    nav[role="navigation"] a {
-      border-bottom: 1px solid white;
-      background: $main-color;
-      color: white;
-      margin: 0;
-      padding: .5em 1em;
-    }
-
-    nav[role="navigation"] li {
-      width: 100%;
-      margin-left: 0;
-      text-align: left;
-      display: block;
-    }
-
-    .intro {
-      margin-bottom: 4em;
-
-      .intro-brand {
-        margin-bottom: 2 * $line-height-baseline;
-        .intro-logo { height: 10em; }
-      }
-      .intro-blurb {
-        margin-top: .4em;
-        font: 400 1.4em/1.4em 'OpenSansLight';
-
-        &:after {
-          bottom: -30px;
-          border-left: 18px solid transparent;
-          border-right: 18px solid transparent;
-          border-top: 18px solid #CCCCCC;
-        }
-      }
-    }
-
-    .section {
-      .headline {
-        @include column(12);
-        margin-bottom: .4em;
-      }
-
-      .sub-headline {
-        @include column(12, 12);
-        margin-bottom: .4em;
-        letter-spacing: 1px;
-      }
-
-      p {
-        @include column(12);
-        padding: 1em;
-        margin-bottom: 0.7em;
-      }
-
-      &.features-area {
-        .features-wrapper {
-          .column-1 {
-            @include column(12);
-            margin-top: 2em;
-            padding-left: 10%;
-          }
-          .column-2 {
-            @include column(12);
-            padding-left: 10%;
-          }
-        }
-      }
-
-      pre {
-        @include column(10);
-        margin-bottom: 3em;
-      }
-    }
-
-    .usage {
-      .side-nav { @include column(12, 12); }
-      .page     { @include column(8.5, 12); }
-    } // usage
   }
 }

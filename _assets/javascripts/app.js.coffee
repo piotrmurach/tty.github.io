@@ -11,10 +11,6 @@ $("#nav-collapse").on 'click', (event) ->
   $("#main-nav").toggleClass 'hide'
   event.preventDefault()
 
-$(".content header").on 'click', (event) ->
-  $.scrollTo('#main-nav', 500)
-  event.preventDefault()
-
 $("#dropdown-button").on 'click', (event) ->
   $button = $(@)
   $menu = $button.find('.dropdown-menu')
