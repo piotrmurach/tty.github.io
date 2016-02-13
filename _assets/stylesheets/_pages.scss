@@ -135,6 +135,7 @@ table {
     }
 
     &.more {
+      position: relative;
       overflow: visible;
 
       > a:after {
@@ -163,6 +164,15 @@ table {
     background-color: #FFFFFF;
     padding: 5px 0;
 
+    @include max-screen($mobile-size) {
+      position: relative;
+      width: 100%;
+      border: none;
+      padding: 0;
+      top: 0;
+      border-radius: 0;
+    }
+
     li {
       display: block;
       margin: 0;
@@ -176,6 +186,19 @@ table {
         padding: 3px 10px;
         clear: both;
         line-height: 1.5;
+      }
+
+      @include max-screen($mobile-size) {
+        > a {
+          padding-left: 2em;
+
+          &:before {
+            content: "›";
+            font-size: 1.2em;
+            position: absolute;
+            left: 1em;
+          }
+        }
       }
     }
 
