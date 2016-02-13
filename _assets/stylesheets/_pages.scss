@@ -140,11 +140,6 @@ table {
       > a:after {
         content: "\25BE";
       }
-
-      &:focus > .dropdown-menu,
-      &:hover > .dropdown-menu {
-        display: block;
-      }
     }
   }
   .active a {
@@ -182,6 +177,10 @@ table {
         clear: both;
         line-height: 1.5;
       }
+    }
+
+    &.show-menu {
+      display: block;
     }
   }
 }
