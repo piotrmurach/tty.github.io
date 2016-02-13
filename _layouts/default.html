@@ -1,13 +1,11 @@
 {% include top.html %}
   <body>
     <div class="banner"></div>
-    <div class="container">
-      {% include header.html %}
-      <div class="content">
-          {{ content }}
-      </div>
-      {% include footer.html %}
-    </div> <!-- /container -->
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
     <script type="text/javascript" src="{{ prefix }}assets/{% asset_path app.js %}"></script>
   </body>
 </html>

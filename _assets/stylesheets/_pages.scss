@@ -70,12 +70,14 @@ table {
     }
   }
 }
+
 .container {
   margin: 0 auto;
-  padding: 0;
-  max-width: 64em;
+  padding: 0 1em;
+  max-width: 30em; // 64em;
   @include clearfix();
 }
+
 .nav-collapse {
   text-align: left;
   width: 100%;
@@ -217,194 +219,181 @@ table {
   background: $main-color;
 }
 
-.content {
-  width: 100%;
-  margin: 0px;
-  @include transition(margin .5s ease);
+.intro {
+  position: relative;
+  @include column(12);
+  margin-top: 4em;
+  margin-bottom: 6em;
+  text-align: center;
 
-  .intro {
+  .intro-brand {
+    display: block;
+    @include row(12);
+    margin: 0 auto;
+  }
+
+  .intro-blurb {
     position: relative;
-    @include column(12);
-    margin-top: 4em;
-    margin-bottom: 6em;
+    font: 400 2.4em/1.4em 'OpenSansLight';
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    text-transform: none;
     text-align: center;
 
-    .intro-brand {
-      display: block;
-      @include row(12);
-      margin: 0 auto;
+    &:after {
+      content: '';
+      z-index: 100;
+      position: absolute;
+      left: 45%;
+      bottom: -50px;
+      width: 0;
+      height: 0;
+      border-left: 32px solid transparent;
+      border-right: 32px solid transparent;
+      border-top: 32px solid #CCCCCC;
     }
+  }
+}
 
-    .intro-blurb {
+.section {
+  width: 100%;
+  height: auto;
+
+  .separator {
+    @include column(12);
+    padding-bottom: 1.7em;
+    margin-bottom: 3em;
+  }
+
+  .headline {
+    @include column(8, 12);
+    @include push(2);
+    color: $main-color;
+    margin-bottom: .8em;
+    line-height: $line-height-baseline;
+    text-transform: uppercase;
+    letter-spacing: -.05em;
+    font-size: 2em;
+  }
+
+  .sub-headline {
+    @include column(8, 12);
+    @include push(2);
+    margin-bottom: .8em;
+    letter-spacing: 1px;
+  }
+
+  p {
+    @include column(8, 12);
+    @include push(2);
+    margin-bottom: 1.5em;
+    line-height: 1.8 * $line-height-baseline;
+    font-size: 0.9em;
+  }
+
+  li {
+    display: list-item;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1.4em;
+    list-style: circle;
+    line-height: 1.8em;
+  }
+
+  &.features-area {
+    position: relative;
+
+    .features-wrapper {
       position: relative;
-      font: 400 2.4em/1.4em 'OpenSansLight';
-      margin-top: 0.8em;
-      margin-bottom: 0.8em;
-      text-transform: none;
-      text-align: center;
+      float: left;
+      width: 100%;
+      background-color: $features-color;
+      color: white;
+      margin-top: 1em;
+      margin: 0px;
+      margin: 0 -600rem;
+      padding: 0 600rem;
+      box-shadow: 0px 0px 35px rgba(0,0,0,.45);
 
-      &:after {
-        content: '';
-        z-index: 100;
-        position: absolute;
-        left: 45%;
-        bottom: -50px;
-        width: 0;
-        height: 0;
-        border-left: 32px solid transparent;
-        border-right: 32px solid transparent;
-        border-top: 32px solid #CCCCCC;
+      .column-1 {
+        @include column(4, 12);
+        @include push(2);
+        margin-top: 2em;
+        margin-bottom: 1.4em;
+        margin-right: 2em;
+      }
+
+      .column-2 {
+        @include column(4, 12);
+        margin-top: 2em;
+        margin-bottom: 1.4em;
       }
     }
   }
 
-  .section {
-    width: 100%;
-    height: auto;
+  pre {
+    @include column(8, 12);
+    @include push(2);
+    margin-bottom: 3em;
+  }
+} // .section
 
-    .separator {
-      @include column(12);
-      padding-bottom: 1.7em;
-      margin-bottom: 3em;
-    }
+.tty-branding {
+  display: block;
+  text-align: center;
+  margin-top: 9em;
 
-    .headline {
-      @include column(8, 12);
-      @include push(2);
-      color: $main-color;
-      margin-bottom: .8em;
-      line-height: $line-height-baseline;
-      text-transform: uppercase;
-      letter-spacing: -.05em;
-      font-size: 2em;
-    }
-
-    .sub-headline {
-      @include column(8, 12);
-      @include push(2);
-      margin-bottom: .8em;
-      letter-spacing: 1px;
-    }
-
-    p {
-      @include column(8, 12);
-      @include push(2);
-      margin-bottom: 1.5em;
-      line-height: 1.8 * $line-height-baseline;
-      font-size: 0.9em;
-    }
-
-    li {
-      display: list-item;
-      margin: 0;
-      padding: 0;
-      margin-bottom: 1.4em;
-      list-style: circle;
-      line-height: 1.8em;
-    }
-
-    &.features-area {
-      position: relative;
-
-      .features-wrapper {
-        position: relative;
-        float: left;
-        width: 100%;
-        background-color: $features-color;
-        color: white;
-        margin-top: 1em;
-        margin: 0px;
-        margin: 0 -600rem;
-        padding: 0 600rem;
-        box-shadow: 0px 0px 35px rgba(0,0,0,.45);
-
-        .column-1 {
-          @include column(4, 12);
-          @include push(2);
-          margin-top: 2em;
-          margin-bottom: 1.4em;
-          margin-right: 2em;
-        }
-
-        .column-2 {
-          @include column(4, 12);
-          margin-top: 2em;
-          margin-bottom: 1.4em;
-        }
-      }
-    }
-
-    pre {
-      @include column(8, 12);
-      @include push(2);
-      margin-bottom: 3em;
-    }
-  } // .section
-
-  .usage {
-    @include column(12);
-    margin: 0 auto;
-
-    .side-nav {
-      @include column(3, 12);
-      @include push(1);
-
-      .nav-header {
-        text-align: left;
-        letter-spacing: 1px;
-        background-color: $features-color;
-        color: white;
-        padding: 10px 15px 9px 10px;
-      }
-
-      ul {
-        float: none;
-        li {
-          display: list-item;
-          line-height: 1.8 * $line-height-baseline;
-
-          a {
-            @include transition(all .25s);
-          }
-        }
-      }
-    }
-
-    .page {
-      @include column(6.5, 12);
-      padding: 0 1em;
-      margin-top: 4em;
-
-      h1 {
-        color: $main-color;
-      }
-
-    }
-  } // usage
-
-  .plugins {
-    @include column(10, 12);
-    @include push(1);
-    text-align: center;
-
-    h1 {
-      text-align: left;
-      color: $main-color; 
-    }
-    p {
-      text-align: left;
-    }
-
-    .tty-branding {
-      display: inline-block;
-      margin-top: 3em;
-      .tty-logo-small {
-        width: 200px;
-      }
-    }
-
-  } // plugins
+  .tty-logo-small {
+    width: 200px;
+  }
 }
+
+.usage {
+  margin: 0 auto;
+
+
+  .side-nav {
+    @include column(3, 12);
+    @include push(1);
+
+    .nav-header {
+      text-align: left;
+      letter-spacing: 1px;
+      background-color: $features-color;
+      color: white;
+      padding: 10px 15px 9px 10px;
+    }
+
+    ul {
+      float: none;
+      li {
+        display: list-item;
+        line-height: 1.8 * $line-height-baseline;
+
+        a {
+          @include transition(all .25s);
+        }
+      }
+    }
+  }
+
+  .page {
+    @include column(6.5, 12);
+    padding: 0 1em;
+
+    h1 { color: $main-color; }
+  }
+} // usage
+
+.plugins {
+  text-align: center;
+  h1 {
+    text-align: left;
+    color: $main-color;
+  }
+
+  p { text-align: left; }
+} // plugins
 
 .highlight pre:hover {
   background-color: white;
@@ -464,7 +453,6 @@ table {
     &.github  { background-image: image-url("icons/github-48.png"); }
     &.linkedin { background-image: image-url("icons/linkedin-48.png"); }
   }
-
 }
 
 @media all and (max-width: $tablet-size) {
@@ -473,73 +461,71 @@ table {
 
     .main-nav.hide { display: block; }
 
-    .content {
-      .intro {
-        margin: 5em auto;
-        margin-top: 2.5em;
+    .intro {
+      margin: 5em auto;
+      margin-top: 2.5em;
 
-        .intro-logo { height: 15em; }
+      .intro-logo { height: 15em; }
 
-        .intro-blurb {
-          margin-top: .8em;
-          font: 400 1.6em/1.4em 'OpenSansLight';
+      .intro-blurb {
+        margin-top: .8em;
+        font: 400 1.6em/1.4em 'OpenSansLight';
 
-          &:after {
-            bottom: -40px;
-            border-left: 24px solid transparent;
-            border-right: 24px solid transparent;
-            border-top: 24px solid #CCCCCC;
-          }
+        &:after {
+          bottom: -40px;
+          border-left: 24px solid transparent;
+          border-right: 24px solid transparent;
+          border-top: 24px solid #CCCCCC;
+        }
+      }
+    }
+
+    .section {
+      .headline {
+        @include column(10, 12);
+        @include push(1);
+        margin-bottom: .8em;
+      }
+
+      .sub-headline {
+        @include column(10, 12);
+        @include push(1);
+        margin-bottom: .8em;
+        letter-spacing: 1px;
+      }
+
+      .separator {
+        @include column(10, 12);
+        @include push(1);
+      }
+
+      p {
+        @include column(10, 12);
+        @include push(1);
+        margin-bottom: 1.5em;
+      }
+
+      .features-wrapper {
+        @include row(12);
+
+        .column-1 {
+          @include column(4, 12);
+          @include push(1);
+          margin-top: 2em;
+          margin-bottom: 1.4em;
+        }
+
+        .column-2 {
+          @include column(4, 12);
+          margin-top: 2em;
+          margin-bottom: 1.4em;
         }
       }
 
-      .section {
-        .headline {
-          @include column(10, 12);
-          @include push(1);
-          margin-bottom: .8em;
-        }
-
-        .sub-headline {
-          @include column(10, 12);
-          @include push(1);
-          margin-bottom: .8em;
-          letter-spacing: 1px;
-        }
-
-        .separator {
-          @include column(10, 12);
-          @include push(1);
-        }
-
-        p {
-          @include column(10, 12);
-          @include push(1);
-          margin-bottom: 1.5em;
-        }
-
-        .features-wrapper {
-          @include row(12);
-
-          .column-1 {
-            @include column(4, 12);
-            @include push(1);
-            margin-top: 2em;
-            margin-bottom: 1.4em;
-          }
-
-          .column-2 {
-            @include column(4, 12);
-            margin-top: 2em;
-            margin-bottom: 1.4em;
-          }
-        }
-
-        pre {
-          @include column(9);
-          @include push(1);
-          margin-bottom: 3em;
-        }
+      pre {
+        @include column(9);
+        @include push(1);
+        margin-bottom: 3em;
       }
     }
   }
@@ -568,73 +554,67 @@ table {
       display: block;
     }
 
-    .content {
-      .intro {
-        margin-bottom: 4em;
+    .intro {
+      margin-bottom: 4em;
 
-        .intro-brand {
-          margin-bottom: 2 * $line-height-baseline;
-          .intro-logo { height: 10em; }
-        }
-        .intro-blurb {
-          margin-top: .4em;
-          font: 400 1.4em/1.4em 'OpenSansLight';
+      .intro-brand {
+        margin-bottom: 2 * $line-height-baseline;
+        .intro-logo { height: 10em; }
+      }
+      .intro-blurb {
+        margin-top: .4em;
+        font: 400 1.4em/1.4em 'OpenSansLight';
 
-          &:after {
-            bottom: -30px;
-            border-left: 18px solid transparent;
-            border-right: 18px solid transparent;
-            border-top: 18px solid #CCCCCC;
-          }
+        &:after {
+          bottom: -30px;
+          border-left: 18px solid transparent;
+          border-right: 18px solid transparent;
+          border-top: 18px solid #CCCCCC;
         }
       }
-
-      .section {
-        .headline {
-          @include column(12);
-          margin-bottom: .4em;
-        }
-
-        .sub-headline {
-          @include column(12, 12);
-          margin-bottom: .4em;
-          letter-spacing: 1px;
-        }
-
-        p {
-          @include column(12);
-          padding: 1em;
-          margin-bottom: 0.7em;
-        }
-
-        &.features-area {
-          .features-wrapper {
-            .column-1 {
-              @include column(12);
-              margin-top: 2em;
-              padding-left: 10%;
-            }
-            .column-2 {
-              @include column(12);
-              padding-left: 10%;
-            }
-          }
-        }
-
-        pre {
-          @include column(10);
-          margin-bottom: 3em;
-        }
-      }
-      .usage {
-        @include column(12);
-        .side-nav {
-          @include column(12, 12);
-        }
-        .page {
-          @include column(8.5, 12);
-        }
-      } // usage
     }
+
+    .section {
+      .headline {
+        @include column(12);
+        margin-bottom: .4em;
+      }
+
+      .sub-headline {
+        @include column(12, 12);
+        margin-bottom: .4em;
+        letter-spacing: 1px;
+      }
+
+      p {
+        @include column(12);
+        padding: 1em;
+        margin-bottom: 0.7em;
+      }
+
+      &.features-area {
+        .features-wrapper {
+          .column-1 {
+            @include column(12);
+            margin-top: 2em;
+            padding-left: 10%;
+          }
+          .column-2 {
+            @include column(12);
+            padding-left: 10%;
+          }
+        }
+      }
+
+      pre {
+        @include column(10);
+        margin-bottom: 3em;
+      }
+    }
+
+    .usage {
+      .side-nav { @include column(12, 12); }
+      .page     { @include column(8.5, 12); }
+    } // usage
   }
 }
