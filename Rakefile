@@ -7,5 +7,5 @@ ENV['COMMAND']   = 'build'
 
 desc 'Publish TTY site'
 task :publish do
-  Rake::Task['site:publish'].invoke("peter-murach/tty")
+  Rake::Task['site:publish'].invoke("piotrmurach/tty")
 end
