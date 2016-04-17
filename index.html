@@ -116,11 +116,14 @@ end
 </p>
 
 {% highlight ruby %}
-spinner = TTY::Spinner.new('Loading ... ', format: :spin_2)
+spinner = TTY::Spinner.new("[:spinner] Loading ...", format: :pulse_2)
 30.times do
   spinner.spin
   sleep(0.1)
 end
+spinner.stop('Done!')
+# =>
+# _ Loading ... Done!
 {% endhighlight %}
 
 <p class="center">
