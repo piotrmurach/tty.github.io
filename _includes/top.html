@@ -13,6 +13,6 @@
     {% else %}
       {% assign prefix = "" %}
     {% endif %}
-    <link rel="stylesheet" type="text/css" href="{{ prefix }}assets/{% asset_path app.css %}" />
+    <link rel="stylesheet" type="text/css" href="{{ prefix }}{% asset_path app.css %}" />
     {% include analytics.html %}
   </head>
