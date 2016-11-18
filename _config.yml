@@ -1,7 +1,11 @@
+---
 name: TTY
 highlighter: pygments
 relative_permalinks: false
 google_analytics_id: UA-31255537-2
+gems:
+  - jekyll-assets
+  - bourbon
 assets:
   baseurl: ./
   compress:
@@ -9,4 +13,4 @@ assets:
     js: uglifier
   cachebust: hard
   gzip: [ text/css, application/javascript ]
-exclude: [components, Rakefile, Gemfile, Gemfile.lock]
+exclude: [components, Rakefile, Gemfile, Gemfile.lock, README.md]
