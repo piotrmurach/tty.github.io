@@ -1,0 +1,13 @@
+---
+- icon: cogs
+  title: Flexible
+  desc: TTY gems let you solve command line problems in the same way Unix philosophy of focused tools does. You can string gems together as you please.
+- icon: puzzle-piece
+  title: Reusable
+  desc: Each gem is an independent component and can be combined in many fantastic ways with other libraries outside of tty.
+- icon: fort-awesome
+  title: Reliable
+  desc: All tty components are small packages that do one thing well and hence are well tested.
+- icon: lightbulb-o
+  title: Simple
+  desc: Each tty gem is a small package of straightforward api calls. The source is small and easy to understand.
