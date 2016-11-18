@@ -77,6 +77,9 @@ table {
   max-width: 54em;
   @include clearfix();
 }
+.page-block {
+  padding: 3.625em 0;
+}
 
 .nav-collapse {
   text-align: left;
@@ -248,40 +251,29 @@ nav[role="navigation"] {
 
 .intro {
   position: relative;
-  margin-bottom: 6em;
   text-align: center;
+  margin-bottom: 6em;
+  @include max-screen($tablet-size) { margin-bottom: 5em; }
+  @include max-screen($mobile-size) { margin-bottom: 4em; }
 
-  @include max-screen($tablet-size) {
-    margin-bottom: 5em
-  }
-  @include max-screen($mobile-size) {
-    margin-bottom: 4em;
-  }
-
-  .intro-brand {
-    display: inline;
+  .brand {
+    display: inline-block;
     margin: 0 auto;
-    max-width: 200px;
-
     @include max-screen($mobile-size) {
       margin-bottom: 2 * $line-height-baseline;
     }
-  }
 
-  .intro-logo {
-    padding-top: 3em;
-    @include max-screen($tablet-size) {
-      height: 12em;
-    }
-    @include max-screen($mobile-size) {
-      height: 8em;
+    &__logo {
+      padding-top: 3em;
+      @include max-screen($tablet-size) { height: 12em; }
+      @include max-screen($mobile-size) { height: 8em; }
     }
   }
 
-  .intro-blurb {
+  .blurb {
     position: relative;
     font: 400 2.4em/1.4em 'OpenSansLight';
-    margin-top: 0.8em;
+    margin-top: 1.8em;
     margin-bottom: 0.8em;
     text-transform: none;
     text-align: center;
@@ -301,15 +293,15 @@ nav[role="navigation"] {
       z-index: 100;
       position: absolute;
       left: 45%;
-      bottom: -50px;
+      bottom: -72px;
       width: 0;
       height: 0;
-      border-left: 32px solid transparent;
-      border-right: 32px solid transparent;
-      border-top: 32px solid #CCCCCC;
+      border-left: 36px solid transparent;
+      border-right: 36px solid transparent;
+      border-top: 36px solid #CCCCCC;
 
       @include max-screen($tablet-size) {
-        bottom: -40px;
+        bottom: -50px;
         border-left: 24px solid transparent;
         border-right: 24px solid transparent;
         border-top: 24px solid #CCCCCC;
@@ -331,34 +323,163 @@ nav[role="navigation"] {
   background-color: $features-color;
   color: white;
   box-shadow: 0px 0px 35px rgba(0,0,0,.45);
+  text-align: center;
 
-  li {
-    display: list-item;
-    margin: 0;
+  .features-intro {
+    color: white;
+    font-size: 2em;
+    text-transform: none;
+    font-weight: normal;
+  }
+
+  .features-list {
+    margin: 2em auto;
     padding: 0;
-    margin-bottom: 1.4em;
-    list-style: circle;
-    line-height: 1.8em;
-  }
+    height: 100%;
 
-  .column {
-    @include column(5.6, 12);
-    margin-top: 2em;
-    margin-bottom: 1.4em;
-
-    @include max-screen($mobile-size) {
-      @include column(12);
-      padding-left: 1em;
+    &__item {
+      position: relative;
+      display: inline-block;
+      float: left;
+      height: 12em;
+      width: 50%;
+      @include max-screen($mobile-size) {
+        width: 100%;
+        height: 10em;
+      }
+      margin: auto;
     }
-  }
-  .column-1 {
-    margin-right: 2em;
+
+    &__icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      vertical-align: top;
+      padding: .4em .6em;
+      text-align: center;
+      font-size: 36px;
+    }
+
+    &__content {
+      vertical-align: top;
+      padding-left: 80px;
+      text-align: left;
+    }
   }
 }
 
-.separator {
-  padding-bottom: 1.7em;
-  margin-bottom: 3em;
+.gems-wrapper {
+  .gems-list {
+    margin-bottom: 2em;
+    @include min-screen($medium-size){
+      @include display(flex);
+      @include flex-wrap(wrap);
+      margin-bottom: 3.75em;
+    }
+
+    &__item {
+      position: relative;
+      display: block;
+      @include min-screen($medium-size) {
+        @include display(flex);
+        @include flex-direction(column);
+        width: 27%;
+        border-right: 1px solid #e5e5e5;
+        padding: 1.75em 1.25em;
+      }
+      margin: 0;
+      text-align: center;
+      padding: 1.2em 0.85em;
+      border-color: #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+
+      &:nth-child(3n) {
+        border-right: none;
+      }
+
+      &--7, &--8 {
+        @include min-screen($medium-size) {
+          border-bottom: none;
+        }
+      }
+      &--9 {
+        border-bottom: none;
+      }
+    }
+
+    &__icon {
+      display: inline-block;
+      font-size: 40px;
+      white-space: normal;
+      @include max-screen($medium-size) {
+        float: left;
+      }
+    }
+
+    &__content {
+      display: block;
+      @include max-screen($medium-size) {
+        text-align: left;
+        margin-left: 4.825em;
+      }
+    }
+
+    &__title {
+      font-size: 1em;
+    }
+
+    &__action {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.4em;
+
+      &:after {
+        @include transition(all 0.15s ease-in-out);
+        content: '';
+        position: absolute;
+        bottom: 0.4em;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: $main-dark-color;
+        @include linear-gradient(left, transparent 0%, $main-dark-color 50%, transparent 100%);
+      }
+      &:hover::after {
+        bottom: 0.2em;
+      }
+    }
+  }
+}
+
+.section-heading {
+  position: relative;
+  text-align: center;
+
+  &__heading {
+    font-size: 2em;
+    @include max-screen($medium-size) { font-size: 1.6em; }
+    text-transform: none;
+  }
+
+  &__subhead {
+    position: relative;
+    font-size: 1.2em;
+    @include max-screen($medium-size) { font-size: 1em; }
+    color: #949494;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      bottom: auto;
+      width: 50px;
+      margin-left: -20px;
+      height: 3px;
+      display: block;
+      background-color: $main-color;
+    }
+  }
 }
 
 .headline {

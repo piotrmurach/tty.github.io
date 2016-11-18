@@ -4,158 +4,88 @@ title: TTY • Toolbox for developing CLI clients in Ruby
 section: overview
 ---
 <section id="home" class="intro">
-<div class='container'>
-  <a href="{{site.url}}" class="intro-brand">
-    <img class="intro-logo" src="assets/{% asset_path tty_logo.png %}" alt="tty logo" /></a>
-  <h1 class="intro-blurb">
-    The Ruby toolbox that you can<br/> use for building CLI projects
-  </h1>
-</div>
+  <div class='container'>
+    <a href="{{site.url}}" class="brand">
+      <img class="brand__logo" src="{{prefix}}{% asset_path tty_logo.png %}" alt="tty logo" /></a>
+    <h1 class="blurb">The Ruby terminal apps toolkit</h1>
+  </div>
 </section>
 
 <section id="features" class="features-area">
-  <div class='container'>
-    <h2 class='headline'>Features</h2>
-    <p>
-      All too often projects that interact with command line create their own interface logic that gathers input from users and displays information back. Many times utility files are created that contain methods for reading system or terminal properties. Shouldn't we focus our energy on building the actual client? Our time and energy should be spent on creating the tools not the foundation.
-    </p>
-  </div>
-
   <div class='features-wrapper'>
     <div class='container'>
-      <ul class="column column-1">
-        <li><span>Table rendering with an intuitive API.</span></li>
-        <li><span>Terminal output colorization.</span></li>
-        <li><span>Terminal &amp; System detection utilities.</span></li>
-        <li><span>Terminal progress bars drawing.</span></li>
-        <li><span>Shell user interface.</span></li>
-      </ul>
-      <ul class="column column-2">
-        <li><span>Terminal output paging.</span></li>
-        <li><span>Configuration file management.</span></li>
-        <li><span>Multilevel logger.</span></li>
-        <li><span>Plugin ecosystem.</span></li>
-        <li><span>Fully tested with major ruby interpreters.</span></li>
+      <h3 class='features-intro'>Everything you need to build command line apps</h3>
+
+      <ul class="features-list">
+        {% for feature in site.data.features %}
+        <li class="features-list__item">
+          <div class="features-list__icon">
+            <i class="fa fa-{{ feature.icon }}"></i>
+          </div>
+          <div class="features-list__content">
+            <h4 class="features-list__title">{{ feature.title }}</h4>
+            <p class="features-list__text">{{ feature.desc }}</p>
+          <div>
+        </li>
+        {% endfor %}
       </ul>
     </div>
   </div>
+</section>
 
-  <div class="separator"></div>
+<section id="gems">
+  <div class="gems-wrapper">
+    <div class='container page-block'>
+      <div class='section-heading'>
+        <h2 class='section-heading__heading'>Explore gems</h2>
+        <p class='section-heading__subhead'>Mix & match what you need to build your command line tool</p>
+      </div>
+
+      <ul class="gems-list">
+        {% for gem in site.data.plugins limit:9 %}
+        <li class="gems-list__item gems-list__item--{{forloop.index}}">
+            <div class="gems-list__icon">
+              <i class="fa fa-diamond"></i>
+            </div>
+            <div class="gems-list__content">
+              <h4 class="gems-list__title">{{ gem.name }}</h4>
+              <p>{{ gem.desc }}</p>
+              <a class="gems-list__action" href="{{ gem.link }}">Learn more</a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+    <p class="center">
+      <a href="" class="button">View all gems</a>
+    </p>
+
+    </div>
+  </div>
 </section>
 
 <section id="quick-start" class="quickstart section">
-<div class='container'>
-  <h2 class='headline'>Quick Start</h2>
-  <p>
-    While installling TTY is simple, there are few requirements. TTY is installed and managed via <a href="http://rubygems.org">rubygems</a>, the <a href="http://www.ruby-lang.org/en/">ruby</a> package manager.
-  </p>
+  <div class='container'>
+    <h2 class='headline'>Quick Start</h2>
+    <p>
+      While installling TTY is simple, there are few requirements. TTY is installed and managed via <a href="http://rubygems.org">rubygems</a>, the <a href="http://www.ruby-lang.org/en/">ruby</a> package manager.
+    </p>
 
-  <h3 class="sub-headline">Installation</h3>
+    <h3 class="sub-headline">Installation</h3>
 
 {% highlight ruby %}
 $ gem install tty
 {% endhighlight %}
 
-<h3 class="sub-headline">Prompt interactions</h3>
-<p>
-  The library has component for creating prompts that help with asking precise questions in the shell.
-</p>
-
-{% highlight ruby %}
-prompt = TTY::Prompt.new
-prompt.ask('What is your name?', default: ENV['USER'])
-# => What is your name? (piotr)
-{% endhighlight %}
-
-<p class="center">
-  <a href="https://github.com/piotrmurach/tty-prompt#ttyprompt" class="button">Learn more</a>
-</p>
-
-<h3 class="sub-headline">Data Tables</h3>
-<p>
-  TTY has component for handling tabular data and displaying it using flexible rendering capabilities.
-</p>
-
-{% highlight ruby %}
-table = TTY::Table.new header: ['h1', 'h2'], rows: [['a1', 'a2'], ['b1', 'b2']]
-table.render(:ascii)
-# =>
-#  +-------+-------+
-#  |header1|header2|
-#  +-------+-------+
-#  |a1     |a2     |
-#  |b1     |b2     |
-#  +-------+-------+
-{% endhighlight %}
-
-<p class="center">
-  <a href="https://github.com/piotrmurach/tty-table#ttytable" class="button">Learn more</a>
-</p>
-
-
-<h3 class="sub-headline">Progress bars</h3>
-<p>
-  You can easily indicate progress for various tasks.
-</p>
-
-{% highlight ruby %}
-bar = TTY::ProgressBar.new("downloading [:bar]", total: 30)
-30.times do
-  sleep(0.1)
-  bar.advance(1)
-end
-{% endhighlight %}
-
-<p class="center">
-  <a href="https://github.com/piotrmurach/tty-progressbar#ttyprogressbar" class="button">Learn more</a>
-</p>
-
-<h3 class="sub-headline">Spinners</h3>
-<p>
-  To easily indicate non-deterministic actions use spinner.
-</p>
-
-{% highlight ruby %}
-spinner = TTY::Spinner.new("[:spinner] Loading ...", format: :pulse_2)
-30.times do
-  spinner.spin
-  sleep(0.1)
-end
-spinner.stop('Done!')
-# =>
-# _ Loading ... Done!
-{% endhighlight %}
-
-<p class="center">
-  <a href="https://github.com/piotrmurach/tty-spinner#ttyspinner" class="button">Learn more</a>
-</p>
-
-<h3 class="sub-headline">Screen properties</h3>
-<p>TTY allows you easily determine screen properties:</p>
-
-{% highlight ruby %}
-screen = TTY::Screen.new
-screen.size     # => [51, 280]
-screen.width    # => 280
-screen.height   # => 51
-{% endhighlight %}
-
-<p class="center">
-  <a href="https://github.com/piotrmurach/tty-screen#ttyscreen" class="button">Learn more</a>
-</p>
-
-<h3 class="sub-headline">Terminal Coloring</h3>
-<p>TTY helps with coloring terminal output.</p>
+  <h3 class="sub-headline">Terminal Coloring</h3>
+  <p>TTY helps with coloring terminal output.</p>
 
 {% highlight ruby %}
 pastel = Pastel.new
 pastel.red.on_green.bold('Unicorns!')
 {% endhighlight %}
 
-<p class="center">
-  <a href="https://github.com/piotrmurach/pastel#pastel" class="button">Learn more</a>
-</p>
-</div>
+  </div>
 </section>
 
 <section id="action-calls" class="section">
