@@ -59,37 +59,34 @@ section: overview
       <p class="center">
         <a href="{{ prefix }}/gems" class="button">View all gems</a>
       </p>
-
     </div>
   </div>
 </section>
 
-<section id="quick-start" class="quickstart section">
-  <div class='container'>
-    <h2 class='headline'>Quick Start</h2>
-    <p>
-      While installling TTY is simple, there are few requirements. TTY is installed and managed via <a href="http://rubygems.org">rubygems</a>, the <a href="http://www.ruby-lang.org/en/">ruby</a> package manager.
-    </p>
+<section id="quick-start">
+  <div class="setup-wrapper">
+    <div class='container page-block'>
+      <div class='section-heading'>
+        <h2 class='section-heading__heading'>Quick Start</h2>
+        <p class='section-heading__subhead'>While installing TTY is simple, ther are few requirements</p>
+      </div>
 
-    <h3 class="sub-headline">Installation</h3>
+      <p>TTY is installed and managed via <a href="http://rubygems.org">rubygems</a>, the <a href="http://www.ruby-lang.org/en/">ruby</a> package manager.</p>
+      <p>To install all the tty components you can do</p>
 
 {% highlight ruby %}
 $ gem install tty
 {% endhighlight %}
 
-  <h3 class="sub-headline">Terminal Coloring</h3>
-  <p>TTY helps with coloring terminal output.</p>
+<p>Alternatively, lookup your favourite <a href="{{prefix}}/gems">tty gem</a> and install it</p>
 
 {% highlight ruby %}
-pastel = Pastel.new
-pastel.red.on_green.bold('Unicorns!')
+$ gem install tty-<component-name>
 {% endhighlight %}
 
+    <p class="center">
+      <a href="https://github.com/piotrmurach/tty" class="button">View source on github</a>
+    </p>
+    </div>
   </div>
-</section>
-
-<section id="action-calls" class="section">
-  <p class="center">
-    <a href="https://github.com/piotrmurach/tty" class="button">View source on github</a>
-  </p>
 </section>

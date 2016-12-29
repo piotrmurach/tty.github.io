@@ -31,9 +31,7 @@ ul {
   }
 }
 
-h1, h2, h3 {
-  text-transform: uppercase;
-}
+h1, h2, h3 { text-transform: uppercase; }
 
 table {
   width: 100%;
@@ -66,6 +64,25 @@ table {
       border-top: 1px solid #DDDDDD;
     }
   }
+}
+
+.center { text-align: center; }
+
+.button {
+  display: inline-block;
+  background-color: $main-color;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: .65em 1em;
+  letter-spacing: 2px;
+  text-align: center;
+  @include transition(background-color .5s ease);
+
+  &:hover {
+    color: #FFFFFF;
+    background-color: $main-dark-color;
+  }
+  &:visited { color: #FFFFFF; }
 }
 
 .container {
@@ -452,6 +469,30 @@ nav[role="navigation"] {
   }
 }
 
+.setup-wrapper {
+  border-top: 1px solid #e5e5e5;
+  background-color: #f9fafa;
+  text-align: center;
+
+  .highlight {
+    display: inline-block;
+    width: 60%;
+    margin: 0 auto;
+    background: none;
+
+    pre {
+      padding: 2em 2em 1.3em;
+      box-shadow: 0 1px 4px #f1f0f0, inset 0 0 0 1px #e7e6e5;
+      font-size: 0.9em;
+      background-color: #f4f4f4;
+      text-align: left;
+
+      @include min-screen($medium-size) {
+      }
+    }
+  }
+}
+
 .section-heading {
   position: relative;
   text-align: center;
@@ -499,18 +540,6 @@ nav[role="navigation"] {
   }
 }
 
-.sub-headline {
-  display: block;
-  margin-bottom: .8em;
-  letter-spacing: 1px;
-  width: 100%;
-
-  @include max-screen($mobile-size) {
-    margin-bottom: .4em;
-    letter-spacing: 1px;
-  }
-}
-
 p {
   margin-bottom: 1.5em;
   line-height: 1.8 * $line-height-baseline;
@@ -519,16 +548,6 @@ p {
   @include max-screen($mobile-size) {
     margin-bottom: 0.7em;
   }
-}
-
-pre {
-  margin-bottom: 3em;
-}
-
-.section {
-  width: 100%;
-  height: auto;
-
 }
 
 .tty-branding {
@@ -543,90 +562,6 @@ pre {
       padding-top: 3em;
       height: 8em;
     }
-  }
-}
-
-.usage {
-  margin: 0 auto;
-
-  .side-nav {
-    @include column(3, 12);
-
-    @include max-screen($mobile-size) {
-      @include column(12);
-    }
-
-    .nav-header {
-      text-align: left;
-      letter-spacing: 1px;
-      background-color: $features-color;
-      color: white;
-      padding: 10px 15px 9px 10px;
-    }
-
-    ul {
-      float: none;
-      li {
-        display: list-item;
-        line-height: 1.8 * $line-height-baseline;
-
-        a { @include transition(all .25s); }
-      }
-    }
-  }
-
-  .page {
-    @include column(8, 12);
-    @include max-screen($mobile-size)  {
-      @include column(12);
-    }
-    padding: 0 1em;
-
-    h1 { color: $main-color; }
-  }
-}
-
-.plugins {
-  text-align: center;
-  h1 {
-    text-align: left;
-    color: $main-color;
-  }
-
-  p { text-align: left; }
-}
-
-.highlight pre:hover {
-  background-color: white;
-}
-
-.highlight pre {
-  padding: 2em 2em 1.3em;
-  box-shadow: 0 1px 4px #f1f0f0, inset 0 0 0 1px #e7e6e5;
-  font-size: 0.9em;
-  background-color: #f4f4f4;
-}
-
-.center {
-  text-align: center;
-}
-
-.button {
-  display: inline-block;
-  background-color: $main-color;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  padding: .65em 1em;
-  letter-spacing: 2px;
-  text-align: center;
-  @include transition(background-color .5s ease);
-
-  &:hover {
-    color: #FFFFFF;
-    background-color: $main-dark-color;
-  }
-  &:visited {
-    color: #FFFFFF;
   }
 }
 
