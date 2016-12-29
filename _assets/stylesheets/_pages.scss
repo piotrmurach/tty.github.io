@@ -630,7 +630,8 @@ pre {
   }
 }
 
-.footer {
+.footer-wrapper {
+  $gray-color: #a9a9a9;
   position: relative;
   display: block;
   margin: 0 auto;
@@ -639,17 +640,21 @@ pre {
   text-align: center;
   padding-bottom: 2em;
   background-color: #222;
+  color: $gray-color;
 
   .icon {
     display: inline-block;
+    color: $gray-color;
     background-repeat: no-repeat;
-    width: 48px;
-    height: 48px;
-    margin-left: 8px;
+    transition: all 0.2s linear;
+    border: 2px solid $gray-color;
+    border-radius: 50%;
+    font-size: 2em;
+    padding: 10px;
+    margin-right: 20px;
 
-    &.twitter { background-image: image-url("icons/twitter-48.png"); }
-    &.email   { background-image: image-url("icons/email-32.png"); }
-    &.github  { background-image: image-url("icons/github-48.png"); }
-    &.linkedin { background-image: image-url("icons/linkedin-48.png"); }
+    &:last-child { margin-right: 0; }
+
+    &:hover { color: white; border-color: white; }
   }
 }
