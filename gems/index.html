@@ -3,16 +3,7 @@ layout: plugins
 title: TTY gems
 section: gems
 permalink: /gems/
-page: true
 ---
-
-{% if page.subpage %}
-  {% assign prefix = "../../" %}
-{% elsif page.page %}
-  {% assign prefix = "../" %}
-{% else %}
-  {% assign prefix = "" %}
-{% endif %}
 
 <a class="tty-branding" href="{{site.url}}/">
   <img class="tty-logo-small" src="{{ prefix }}{% asset_path tty_logo_medium.png %}" />

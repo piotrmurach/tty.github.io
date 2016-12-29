@@ -1,0 +1,7 @@
+{% assign prefix = '' %}
+{% assign level = page.url | append:'index.html' | split:'/' | size | minus: 1 %}
+{% if    level <= 1 %}{% assign prefix = '.' %}
+{% elsif level == 2 %}{% assign prefix = '..' %}
+{% elsif level == 3 %}{% assign prefix = '../..' %}
+{% elsif level == 4 %}{% assign prefix = '../../..' %}{% endif %}
+
