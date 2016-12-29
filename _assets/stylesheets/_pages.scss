@@ -476,9 +476,13 @@ nav[role="navigation"] {
 
   .highlight {
     display: inline-block;
-    width: 60%;
+    width: 45%;
     margin: 0 auto;
     background: none;
+    margin-bottom: 2em;
+    @include max-screen($medium-size) {
+      width: 90%;
+    }
 
     pre {
       padding: 2em 2em 1.3em;
@@ -486,9 +490,11 @@ nav[role="navigation"] {
       font-size: 0.9em;
       background-color: #f4f4f4;
       text-align: left;
+    }
 
-      @include min-screen($medium-size) {
-      }
+    .err {
+      color: #111;
+      background-color: transparent;
     }
   }
 }
