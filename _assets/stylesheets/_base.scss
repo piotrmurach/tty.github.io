@@ -1,10 +1,12 @@
-@import 'normalize';
-@import 'syntax';
-@import 'grid';
-@import 'bourbon';
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import 'variables';
-@import 'media-queries';
-@import 'fonts';
-@import 'pages';
+@import
+  'normalize',
+  'syntax',
+  'grid',
+  'bourbon/bourbon',
+  "font-awesome-sprockets",
+  "font-awesome",
+  'variables',
+  'media-queries',
+  'fonts',
+  'pages'
+;
