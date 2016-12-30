@@ -1,30 +1,26 @@
 ---
-layout: plugins
+layout: default
 title: TTY gems
 section: gems
 permalink: /gems/
 ---
 
-<a class="tty-branding" href="{{site.url}}/">
-  <img class="tty-logo-small" src="{{ prefix }}{% asset_path tty_logo_medium.png %}" />
-</a>
-<h1>{{ page.title }}</h1>
-<p>Below you will find listing of all the plugins from the tty ecosystem.</p>
-<p>Each plugin can be installed independently, therefore you can mix and match what your CLI app needs. However, by installing tty gem, you will include all the plugins.</p>
+<div class='plugins-wrapper'>
+  <div class='section-heading'>
+    <h1 class='section-heading__heading'>{{ page.title }}</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Plugin name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for plugin in site.data.plugins %}
-    <tr>
-      <td><a href="http://github.com/piotrmurach/{{ plugin.name }}">{{ plugin.name }}</a></td>
-      <td>{{ plugin.desc }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    <p class='section-heading__subhead'>Browse all the plugins from the tty ecosystem</p>
+  </div>
+
+   <p class='section-explanation'>Each plugin can be installed independently, so you can mix and match what your CLI app needs. However, by installing <em>tty gem</em>, you will include all the plugins.</p>
+
+  <section class="plugins-section page-block">
+    <dl class='plugins-list'>
+      {% assign sorted_plugins = site.data.plugins | sort: 'name' %}
+      {% for plugin in sorted_plugins %}
+        <dt class='plugins-list__title'><a href="http://github.com/piotrmurach/{{ plugin.name }}">{{ plugin.name }}</a></dt>
+        <dd class='plugins-list__desc {% if sorted_plugins.last.name == plugin.name %}plugins-list__desc-last{% endif %}'>{{ plugin.desc }}</dd>
+      {% endfor %}
+    </dl>
+  </section>
+</div>
