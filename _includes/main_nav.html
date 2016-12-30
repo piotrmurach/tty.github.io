@@ -1,7 +1,7 @@
 <a href="#main-nav" class="nav-collapse" id="nav-collapse">Menu</a>
 <ul id="main-nav" class="main-nav hide">
   <li class="nav-link {% if page.section == 'overview' %}active{% endif %}"><a href="{{prefix}}">Home</a></li>
-  <li class="nav-link {%if page.section == 'gems' %}active{% endif %}"><a href="{{ prefix }}gems/">Gems</a></li>
+  <li class="nav-link {%if page.section == 'gems' %}active{% endif %}"><a href="{{ prefix }}/gems/">Gems</a></li>
   <li class='nav-link more' id='dropdown-button'><a href="javascript:void(0)">API</a>
     <ul class='dropdown-menu'>
       {% for plugin in site.data.plugins %}
@@ -10,5 +10,5 @@
     </ul>
   </li>
   <li class="nav-link"><a href="https://gitter.im/piotrmurach/tty">Chat</a></li>
-  <li class="nav-link"><a href="{{ prefix }}blog/">Blog</a></li>
+  <!-- <li class="nav-link"><a href="{{ prefix }}blog/">Blog</a></li> -->
 </ul>
