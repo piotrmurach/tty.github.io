@@ -9,7 +9,7 @@ gems:
   - bourbon
   - font-awesome-sass
 assets:
-  prefix: '.'
+  baseurl: '.'
   compress:
     css: sass
     js: uglifier
