@@ -2,14 +2,13 @@
 name: TTY
 highlighter: pygments
 relative_permalinks: false
-baseurl: ""
+baseurl: "/tty"
 google_analytics_id: UA-31255537-2
 gems:
   - jekyll-assets
   - bourbon
   - font-awesome-sass
 assets:
-  baseurl: '.'
   compress:
     css: sass
     js: uglifier
