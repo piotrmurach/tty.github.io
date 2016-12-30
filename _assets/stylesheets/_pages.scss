@@ -99,90 +99,94 @@ table {
   text-transform: none;
   margin: 2.67em 0;
 }
-
-.nav-collapse {
-  text-align: left;
-  width: 100%;
-  padding: 0.625em 0;
-  display: none;
-  @include max-screen($mobile-size) {
-    padding-left: 1em;
-    display: block;
-  }
-
-  &:after {
-    content: "";
-    background: image-url("icons/nav-icon.png") no-repeat;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    position: absolute;
-    top: 6px;
-    right: 10px;
-  }
-
-  &.active {
-    display: block;
-  }
-}
-
-nav[role="navigation"] {
-  @include max-screen($mobile-size) {
-    li {
-      width: 100%;
-      margin-left: 0;
-      text-align: left;
-      display: block;
-      z-index: 999;
-    }
-
-    a {
-      border-bottom: 1px solid white;
-      background: $main-color;
-      color: white;
-      margin: 0;
-    }
-  }
-}
-
-.main-nav.hide {
-  display: block;
-  @include max-screen($mobile-size) { display: none; }
-}
-
-.main-nav {
+.nav-checkbox { display: none; }
+.nav-toggle {
   position: relative;
-  display: block;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
+  display: none;
+  padding: 0.625em 0;
+  text-align: left;
+  background-color: $main-color;
+  color: #fff;
+  cursor: pointer;
+
+  @include max-screen($mobile-size) {
+    display: block;
+    border-bottom: 1px solid #fff;
+  }
+
+  &__name {
+    display: inline-block;
+    font-size: 1.8em;
+    margin-left: 10px;
+  }
+
+  &__burger {
+    position: absolute;
+    top: 0; right: 10px; bottom: 0; left: auto;
+    display: inline-block;
+    font-size: 3em;
+  }
+}
+.nav-checkbox:checked ~ nav {
+  max-height: 1000px;
+}
+nav {
+  @include max-screen($mobile-size) {
+    max-height: 0;
+    overflow: hidden;
+    @include transition(all .15s ease);
+  }
+}
+.nav-menu {
+  position: relative;
+  margin: 0 auto;
   text-align: center;
-  z-index: 9999;
 
-  li {
-    margin-left: .8em;
-  }
-  li:last-child {
-    border-right: 0;
-    margin-right: 0;
-  }
+  &__item {
+    margin: 0 6px;
+    padding: 0;
 
-  .nav-link {
-    a {
-      @include transition(background .5s ease);
+    @include max-screen($mobile-size) {
+      display: block;
       margin: 0;
-      padding: 2.4em 1em .8em;
+      text-align: left;
+    }
+
+    a {
+      display: inline-block;
+      margin: 0;
+      padding: 2.4em 1.2em .8em;
+
+
       font-size: 1.1em;
       font-weight: 400;
       letter-spacing: 1px;
-      text-transform: uppercase;
-      width: 100%;
-      float: left;
       color: #111111;
+
+      border-bottom: 4px solid transparent;
+      text-decoration: none;
+      text-transform: uppercase;
       outline: none;
+      @include transition(all .3s linear);
 
       &:hover {
-        background: #dddddd;
+        color: $main-color;
+        border-bottom-color: $main-color;
+      }
+
+      @include max-screen($mobile-size) {
+        display: block;
+        padding: 1.2em 0.8em;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+
+    &-active a {
+      color: #fff;
+      background: $main-color;
+
+      &:hover {
+        color: #fff;
       }
     }
 
@@ -194,10 +198,6 @@ nav[role="navigation"] {
         content: "\25BE";
       }
     }
-  }
-  .active a {
-    color: white;
-    background: $main-color;
   }
 
   .dropdown-menu {
