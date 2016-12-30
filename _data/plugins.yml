@@ -9,13 +9,13 @@
   desc: A terminal spinner for tasks with non-deterministic time.
   link: https://github.com/piotrmurach/tty-spinner#ttyspinner-
 - name: tty-command
-  desc: Execute shell commands with pretty logging and capture stdout, stderr and exit status.
+  desc: Execute shell commands with pretty logging.
   link: https://github.com/piotrmurach/tty-command#ttycommand-
 - name: tty-table
   desc: A flexible and intuitive table output generator.
   link: https://github.com/piotrmurach/tty-table#ttytable-
 - name: tty-file
-  desc: File manipulation utility methods.
+  desc: File and directory manipulation utility methods.
   link: https://github.com/piotrmurach/tty-file#ttyfile-
 - name: tty-screen
   desc: Terminal screen properties detection.
