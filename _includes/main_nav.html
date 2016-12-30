@@ -9,12 +9,18 @@
 
     <li class="nav-menu__item {%if page.section == 'gems' %}nav-menu__item-active{% endif %}"><a href="{{ prefix }}/gems/">Gems</a></li>
 
-    <li class='nav-menu__item more' id='dropdown-button'><a href="javascript:void(0)">API</a>
-      <ul class='dropdown-menu'>
-        {% for plugin in site.data.plugins %}
-          <li><a href="http://www.rubydoc.info/gems/{{ plugin.name }}">{{plugin.name}}</a></li>
-        {% endfor %}
-      </ul>
+    <li class='nav-menu__item more' id='dropdown-button'>
+      <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox" />
+      <label for="dropdown-toggle" class='dropdown-toggle'>API</label>
+
+      <nav class='nav-dropdown' role="navigation">
+        <ul class='nav-dropdown-menu'>
+          {% assign sorted_plugins = site.data.plugins | sort: 'name' %}
+          {% for plugin in sorted_plugins %}
+            <li><a href="http://www.rubydoc.info/gems/{{ plugin.name }}">{{plugin.name}}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
     </li>
 
     <li class="nav-menu__item"><a href="https://gitter.im/piotrmurach/tty">Chat</a></li>
