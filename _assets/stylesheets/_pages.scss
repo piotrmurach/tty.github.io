@@ -20,7 +20,6 @@ ul {
   margin: 0;
   padding: 0;
   width: 100%;
-  float: left;
 
   li {
     float: none;
@@ -94,8 +93,11 @@ table {
   max-width: 54em;
   @include clearfix();
 }
-.page-block {
-  padding: 3.625em 0;
+.page-block { padding: 3.625em 0; }
+
+.page-heading {
+  text-transform: none;
+  margin: 2.67em 0;
 }
 
 .nav-collapse {
@@ -488,7 +490,7 @@ nav[role="navigation"] {
       padding: 2em 2em 1.3em;
       box-shadow: 0 1px 4px #f1f0f0, inset 0 0 0 1px #e7e6e5;
       font-size: 0.9em;
-      background-color: #f4f4f4;
+      background-color: #fff;
       text-align: left;
     }
 
@@ -556,17 +558,44 @@ p {
   }
 }
 
-.tty-branding {
-  display: block;
+.plugins-wrapper {
   text-align: center;
 
-  .tty-logo-small {
-    max-width: 200px;
-    padding-top: 4em;
+  .section-heading {
+    margin: 4.2em 1em 0 1em;
 
-    @include max-screen($mobile-size) {
-      padding-top: 3em;
-      height: 8em;
+    &__subhead { color: #767676; }
+  }
+
+  .section-explanation {
+    margin: 0 auto 4.2em auto;
+    width: 60%;
+    @include max-screen($mobile-size) { width: 100%; }
+    color: #767676
+  }
+}
+.plugins-section {
+  border-top: 1px solid #e5e5e5;
+}
+.plugins-list {
+  width: 50%;
+  @include max-screen($mobile-size) { width: 100%; }
+  margin: 0 auto;
+
+  &__title {
+    padding: 20px 0 10px 0;
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  &__desc {
+    margin: 0px 20px;
+    padding: 0 0 20px 0;
+    text-align: left;
+    border-bottom: 1px solid #ced1d6;
+
+    &-last {
+      border-bottom: none;
     }
   }
 }
