@@ -13,6 +13,5 @@ assets:
     css: sass
     js: uglifier
   cachebust: hard
-  cache: false
   gzip: [ text/css, application/javascript ]
 exclude: [components, Rakefile, Gemfile, Gemfile.lock, README.md]
