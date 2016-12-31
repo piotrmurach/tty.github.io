@@ -199,7 +199,8 @@ nav {
 
       > label:after {
         position: absolute;
-        right: 10px;
+        right: 0;
+        @include max-screen($mobile-size) { right: 10px; }
         content: "\25BE";
       }
     }
