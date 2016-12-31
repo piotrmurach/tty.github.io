@@ -1,3 +1,13 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
 body {
   font: 400 112.5%/1.4 'VarelaRegular';
   @include max-screen($tablet-size) { font: 400 100%/1.4 'VarelaRegular'; }
@@ -283,13 +293,12 @@ nav {
 
   .brand {
     display: inline-block;
-    margin: 0 auto;
+    margin: 5.3em auto 0 auto;
     @include max-screen($mobile-size) {
       margin-bottom: 2 * $line-height-baseline;
     }
 
     &__logo {
-      padding-top: 3em;
       @include max-screen($tablet-size) { height: 12em; }
       @include max-screen($mobile-size) { height: 8em; }
     }
@@ -298,8 +307,7 @@ nav {
   .blurb {
     position: relative;
     font: 400 2.4em/1.4em 'OpenSansLight';
-    margin-top: 1.8em;
-    margin-bottom: 0.8em;
+    margin: 0.8em auto;
     text-transform: none;
     text-align: center;
 
@@ -409,7 +417,7 @@ nav {
       @include min-screen($medium-size) {
         @include display(flex);
         @include flex-direction(column);
-        width: 27%;
+        width: 33.3333%;
         border-right: 1px solid #e5e5e5;
         padding: 1.75em 1.25em;
       }
