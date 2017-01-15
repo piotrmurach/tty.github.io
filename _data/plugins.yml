@@ -23,18 +23,18 @@
 - name: pastel
   desc: Terminal strings styling with intuitive and clean API.
   link: https://github.com/piotrmurach/pastel#pastel
-- name: tty-reader
-  desc: Event driven handling of keyboard inputs.
-  link: https://github.com/piotrmurach/tty-reader#ttyreader-
+- name: tty-pager
+  desc: Terminal output paging in a cross-platform way.
+  link: https://github.com/piotrmurach/tty-pager#ttypager-
+- name: tty-editor
+  desc: Opens a file or text in the user's preferred editor.
+  link: https://github.com/piotrmurach/tty-editor#ttyeditor-
 - name: tty-color
   desc: Terminal color capabilities detection.
   link: https://github.com/piotrmurach/tty-color#ttycolor-
 - name: tty-cursor
   desc: Move terminal cursor around.
   link: https://github.com/piotrmurach/tty-cursor#ttycursor-
-- name: tty-pager
-  desc: Terminal output paging in a cross-platform way.
-  link: https://github.com/piotrmurach/tty-pager#ttypager-
 - name: tty-platform
   desc: Detecting different operating systems.
   link: https://github.com/piotrmurach/tty-platform#ttyplatform-
