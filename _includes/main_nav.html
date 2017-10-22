@@ -14,11 +14,22 @@
       <label for="dropdown-toggle" class='dropdown-toggle'>Docs</label>
 
       <nav class='nav-dropdown' role="navigation">
+        {% assign sorted_plugins = site.data.plugins | sort: 'name' %}
         <ul class='nav-dropdown-menu'>
-          {% assign sorted_plugins = site.data.plugins | sort: 'name' %}
-          {% for plugin in sorted_plugins %}
-            <li><a href="http://www.rubydoc.info/gems/{{ plugin.name }}">{{plugin.name}}</a></li>
-          {% endfor %}
+          <li class='nav-dropdown-menu__item'>
+            <ul>
+              {% for plugin in sorted_plugins offset: 0 limit: 8 %}
+                <li><a href="http://www.rubydoc.info/gems/{{ plugin.name }}">{{plugin.name}}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li class='nav-dropdown-menu__item'>
+            <ul>
+              {% for plugin in sorted_plugins offset: 8 %}
+                <li><a href="http://www.rubydoc.info/gems/{{ plugin.name }}">{{plugin.name}}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
         </ul>
       </nav>
     </li>
