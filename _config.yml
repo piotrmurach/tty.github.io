@@ -4,7 +4,7 @@ highlighter: pygments
 relative_permalinks: false
 baseurl: "/tty"
 google_analytics_id: UA-31255537-2
-gems:
+plugins:
   - jekyll-assets
   - bourbon
   - font-awesome-sass
