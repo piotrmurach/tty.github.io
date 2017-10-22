@@ -14,6 +14,12 @@
 - name: tty-table
   desc: A flexible and intuitive table output generator.
   link: https://github.com/piotrmurach/tty-table#ttytable-
+- name: tty-tree
+  desc: Print directory or structured data in a tree like format.
+  link: https://github.com/piotrmurach/tty-tree#ttytree-
+- name: tty-reader
+  desc: A set of methods for processing keyboard input in character, line and multiline modes.
+  link: https://github.com/piotrmurach/tty-reader#ttyreader-
 - name: tty-file
   desc: File and directory manipulation utility methods.
   link: https://github.com/piotrmurach/tty-file#ttyfile-
