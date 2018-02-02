@@ -18,14 +18,14 @@
         <ul class='nav-dropdown-menu'>
           <li class='nav-dropdown-menu__item'>
             <ul>
-              {% for plugin in sorted_plugins offset: 0 limit: 8 %}
+              {% for plugin in sorted_plugins offset: 0 limit: 9 %}
                 <li><a href="http://www.rubydoc.info/gems/{{ plugin.name }}">{{plugin.name}}</a></li>
               {% endfor %}
             </ul>
           </li>
           <li class='nav-dropdown-menu__item'>
             <ul>
-              {% for plugin in sorted_plugins offset: 8 %}
+              {% for plugin in sorted_plugins offset: 9 %}
                 <li><a href="http://www.rubydoc.info/gems/{{ plugin.name }}">{{plugin.name}}</a></li>
               {% endfor %}
             </ul>
