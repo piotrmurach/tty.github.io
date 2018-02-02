@@ -23,6 +23,9 @@
 - name: tty-file
   desc: File and directory manipulation utility methods.
   link: https://github.com/piotrmurach/tty-file#ttyfile-
+- name: tty-font
+  desc: Write text in large stylized characters using a variety of terminal friendly fonts.
+  link: https://github.com/piotrmurach/tty-font#ttyfont-
 - name: tty-screen
   desc: Terminal screen properties detection.
   link: https://github.com/piotrmurach/tty-screen#ttyscreen-
@@ -47,3 +50,6 @@
 - name: tty-which
   desc: Platform independent implementation of Unix which command.
   link: https://github.com/piotrmurach/tty-which#ttywhich-
+- name: tty-markdown
+  desc: Convert a markdown document or text into a terminal friendly output.
+  link: https://github.com/piotrmurach/tty-markdown#ttymarkdown-
