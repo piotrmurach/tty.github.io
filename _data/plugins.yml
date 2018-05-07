@@ -14,15 +14,18 @@
 - name: tty-table
   desc: A flexible and intuitive table output generator.
   link: https://github.com/piotrmurach/tty-table#ttytable-
-- name: tty-tree
-  desc: Print directory or structured data in a tree like format.
-  link: https://github.com/piotrmurach/tty-tree#ttytree-
+- name: tty-markdown
+  desc: Convert a markdown document or text into a terminal friendly output.
+  link: https://github.com/piotrmurach/tty-markdown#ttymarkdown-
 - name: tty-reader
   desc: A set of methods for processing keyboard input in character, line and multiline modes.
   link: https://github.com/piotrmurach/tty-reader#ttyreader-
 - name: tty-file
   desc: File and directory manipulation utility methods.
   link: https://github.com/piotrmurach/tty-file#ttyfile-
+- name: tty-config
+  desc: Define, read and write any Ruby app configurations with a penchant for terminal clients.
+  link: https://github.com/piotrmurach/tty-config#ttyconfig-
 - name: tty-font
   desc: Write text in large stylized characters using a variety of terminal friendly fonts.
   link: https://github.com/piotrmurach/tty-font#ttyfont-
@@ -47,9 +50,9 @@
 - name: tty-platform
   desc: Detecting different operating systems.
   link: https://github.com/piotrmurach/tty-platform#ttyplatform-
+- name: tty-tree
+  desc: Print directory or structured data in a tree like format.
+  link: https://github.com/piotrmurach/tty-tree#ttytree-
 - name: tty-which
   desc: Platform independent implementation of Unix which command.
   link: https://github.com/piotrmurach/tty-which#ttywhich-
-- name: tty-markdown
-  desc: Convert a markdown document or text into a terminal friendly output.
-  link: https://github.com/piotrmurach/tty-markdown#ttymarkdown-
