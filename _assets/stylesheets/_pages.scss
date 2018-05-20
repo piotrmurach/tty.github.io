@@ -76,6 +76,15 @@ table {
 }
 
 .center { text-align: center; }
+.narrow-para {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  @include max-screen($mobile-size) {
+    width: 100%;
+    margin: 0;
+  }
+}
 
 .button {
   display: inline-block;
@@ -506,12 +515,13 @@ nav {
 
 .setup-wrapper {
   border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
   background-color: #f9fafa;
   text-align: center;
 
   .highlight {
     display: inline-block;
-    width: 45%;
+    width: 70%;
     margin: 0 auto;
     background: none;
     margin-bottom: 2em;
@@ -530,6 +540,26 @@ nav {
     .err {
       color: #111;
       background-color: transparent;
+    }
+  }
+}
+.trusted-wrapper {
+  .logos-list {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include align-content(center);
+    justify-content: space-evenly;
+
+    &__item {
+      display: inline-block;
+
+      img {
+        height: 50px;
+        max-width: 200px;
+        margin: 1em;
+      }
     }
   }
 }
