@@ -56,3 +56,9 @@
 - name: tty-which
   desc: Platform independent implementation of Unix which command.
   link: https://github.com/piotrmurach/tty-which#ttywhich-
+- name: tty-box
+  desc: Draw various frames and boxes in your terminal interface.
+  link: https://github.com/piotrmurach/tty-box#ttybox-
+- name: tty-pie
+  desc: Draw pie charts in your terminal window.
+  link: https://github.com/piotrmurach/tty-pie#ttypie-
