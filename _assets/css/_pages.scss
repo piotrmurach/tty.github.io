@@ -473,6 +473,7 @@ nav {
       display: inline-block;
       font-size: 40px;
       white-space: normal;
+      color: #BE1D2C;
       @include max-screen($medium-size) {
         float: left;
       }
