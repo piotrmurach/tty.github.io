@@ -6,7 +6,7 @@ section: overview
 <section id="home" class="intro">
   <div class='container'>
     <a href="{{site.baseurl}}/" class="brand">
-      <img class="brand__logo" src="{% asset_path tty_logo.png %}" alt="tty logo" />
+      <img class="brand__logo" src="{% asset tty_logo.png @data %}" alt="tty logo" />
     </a>
     <h1 class="blurb">The Ruby terminal apps toolkit</h1>
   </div>
@@ -21,7 +21,7 @@ section: overview
         {% for feature in site.data.features %}
         <li class="features-list__item">
           <div class="features-list__icon">
-            <i class="fa fa-{{ feature.icon }}"></i>
+            <i class="{{ feature.icon }}"></i>
           </div>
           <div class="features-list__content">
             <h4 class="features-list__title">{{ feature.title }}</h4>
@@ -46,7 +46,7 @@ section: overview
         {% for gem in site.data.plugins limit:9 %}
         <li class="gems-list__item gems-list__item--{{forloop.index}}">
             <div class="gems-list__icon">
-              <i class="fa fa-diamond"></i>
+              <i class="fas fa-gem"></i>
             </div>
             <div class="gems-list__content">
               <h4 class="gems-list__title">{{ gem.name }}</h4>
@@ -116,22 +116,22 @@ $ teletype new app
       <ul class='logos-list'>
         <li class='logos-list__item'>
           <a href="https://fastlane.tools/" target="_blank">
-            <img class="company-logo" src="{% asset_path fastlane_logo.png %}" alt="fastlane logo" />
+            <img class="company-logo" src="{% asset fastlane_logo.png @data %}" alt="fastlane logo" />
           </a>
         </li>
         <li class='logos-list__item'>
           <a href="https://www.kontena.io/" target="_blank">
-            <img class="company-logo" src="{% asset_path kontena-logo.svg %}" alt="Kontena logo" />
+            <img class="company-logo" src="{% asset kontena-logo.svg @data %}" alt="Kontena logo" />
           </a>
         </li>
         <li class='logos-list__item'>
           <a href="https://codeclimate.com/" target="_blank">
-            <img class="company-logo" src="{% asset_path code-climate-logo.svg %}" alt="Code Climate logo" />
+            <img class="company-logo" src="{% asset code-climate-logo.svg @data %}" alt="Code Climate logo" />
           </a>
         </li>
         <li class='logos-list__item'>
           <a href="https://puppet.com/" target="_blank">
-            <img class="company-logo" src="{% asset_path puppet-labs-logo.png %}" alt="Puppet Labs logo" />
+            <img class="company-logo" src="{% asset puppet-labs-logo.png @data %}" alt="Puppet Labs logo" />
           </a>
         </li>
       </ul>
