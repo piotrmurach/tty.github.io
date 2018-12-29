@@ -1,6 +1,6 @@
+/Gemfile.lock
+/.bundle/
 _site
-*.sw*
 .sass-cache
 .asset-cache
 components
-.bundle
