@@ -4,10 +4,10 @@
   desc: TTY gems let you solve command line problems in the same way Unix philosophy of focused tools does. You can string gems together as you please.
 - icon: fas fa-puzzle-piece
   title: Reusable
-  desc: Each gem is an independent component and can be combined in many fantastic ways with other libraries outside of tty.
+  desc: Each gem is an independent component and can be combined in many fantastic ways with other libraries outside of tty ecosystem.
 - icon: fab fa-fort-awesome
   title: Reliable
-  desc: All tty components are small packages that do one thing well and hence are well tested.
+  desc: All tty components are well tested to work on all major operating systems and terminal emulators.
 - icon: far fa-lightbulb
   title: Simple
   desc: Each tty gem is a small package of straightforward api calls. The source is small and easy to understand.
