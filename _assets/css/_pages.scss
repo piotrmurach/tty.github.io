@@ -676,7 +676,7 @@ p {
   position: relative;
   display: block;
   margin: 0 auto;
-  padding-top: 6em;
+  padding-top: 3em;
   padding-bottom: 4em;
   text-align: center;
   padding-bottom: 2em;
@@ -688,8 +688,6 @@ p {
     color: $gray-color;
     background-repeat: no-repeat;
     transition: all 0.2s linear;
-    border: 2px solid $gray-color;
-    border-radius: 50%;
     font-size: 2em;
     padding: 10px;
     margin-right: 20px;
