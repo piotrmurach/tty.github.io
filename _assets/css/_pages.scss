@@ -555,6 +555,13 @@ nav {
 
     &__item {
       display: inline-block;
+      a {
+        outline: none;
+        &:hover, &:active {
+          outline: none;
+          border: none;
+        }
+      }
 
       img {
         height: 50px;
