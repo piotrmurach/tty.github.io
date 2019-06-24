@@ -544,6 +544,54 @@ nav {
     }
   }
 }
+
+.testimonials-wrapper {
+  border-bottom: 1px solid #e5e5e5;
+
+  .testimonials {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    @include flex-direction(row);
+
+    &__item {
+      @include flex(0 0 48%);
+      max-width: 48%;
+      padding: 0 2rem;
+    }
+
+    .testimonial {
+      text-align: center;
+      margin-top: 60px;
+      border-bottom: 3px solid $dark-red-color;
+      background-color: #f8f9fa;
+
+      &__icon {
+        width: 75px;
+        height: 75px;
+        margin: -40px auto 0 auto;
+        line-height: 75px;
+        background: $dark-red-color;
+        color: #fff;
+        font-size: 2.5em;
+        border-radius: 50%;
+      }
+
+      &__body {
+        flex: 1 1 auto;
+        padding: 1.25em;
+      }
+
+      &__name, &__job {
+        font-size: 0.9em;
+        text-transform: none;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
 .trusted-wrapper {
   .logos-list {
     @include display(flex);
