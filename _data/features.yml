@@ -3,7 +3,7 @@
   title: Flexible
   desc: TTY gems let you solve command line problems in the same way Unix philosophy of focused tools does. You can string gems together as you please.
 - icon: fas fa-puzzle-piece
-  title: Reusable
+  title: Composable
   desc: Each gem is an independent component and can be combined in many fantastic ways with other libraries outside of tty ecosystem.
 - icon: fab fa-fort-awesome
   title: Reliable

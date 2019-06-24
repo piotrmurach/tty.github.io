@@ -88,19 +88,23 @@ table {
 
 .button {
   display: inline-block;
-  background-color: $main-color;
-  color: #FFFFFF;
+  box-shadow: 3px 4px 0 rgba(0,0,0,0.1);
+  background-color: #fff;
+  border: 1px solid $dark-red-color;
+  color: $dark-red-color;
   text-transform: uppercase;
-  padding: .65em 1em;
-  letter-spacing: 2px;
+  padding: .65em 1.5em;
+  letter-spacing: 1px;
   text-align: center;
-  @include transition(background-color .5s ease);
+  @include transition(all .25s ease-in-out);
 
-  &:hover {
-    color: #FFFFFF;
-    background-color: $main-dark-color;
+  &:visited {
+    color: $dark-red-color;
   }
-  &:visited { color: #FFFFFF; }
+  &:hover {
+    background-color: $dark-red-color;
+    color: #fff;
+  }
 }
 
 .container {
@@ -495,6 +499,7 @@ nav {
       position: relative;
       display: inline-block;
       padding-bottom: 0.4em;
+      color: $main-dark-color;
 
       &:after {
         @include transition(all 0.15s ease-in-out);
@@ -515,10 +520,45 @@ nav {
 }
 
 .setup-wrapper {
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
-  background-color: #f9fafa;
+  background-color: $dark-red-color;
   text-align: center;
+  color: #fff;
+
+  .section-heading {
+    &__subhead {
+      color: #fff;
+    }
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+
+    &:after {
+      @include transition(all 0.15s ease-in-out);
+      content: '';
+      position: absolute;
+      bottom: 0.4em;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #fff;
+    }
+    &:hover::after {
+      bottom: 0.2em;
+    }
+  }
+
+  .button {
+    background: #fff;// #f05927;
+    border: 1px solid #fff;
+    color: #111;
+
+    &:after {
+      height: 0;
+    }
+  }
 
   .highlight {
     display: inline-block;
@@ -532,9 +572,10 @@ nav {
 
     pre {
       padding: 2em 2em 1.3em;
-      box-shadow: 0 1px 4px #f1f0f0, inset 0 0 0 1px #e7e6e5;
+      border: 1px solid #fff;
+      box-shadow: 3px 4px rgba(0,0,0,0.1);
       font-size: 0.9em;
-      background-color: #fff;
+      background-color: #000;
       text-align: left;
     }
 
