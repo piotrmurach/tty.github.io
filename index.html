@@ -120,26 +120,18 @@ Run "teletype help" for more commands.
       </div>
 
       <ul class="testimonials">
+        {% for testimonial in site.data.testimonials %}
         <li class="testimonials__item">
           <div class="testimonial">
             <i class="fa fa-quote-left testimonial__icon"></i>
             <div class="testimonial__body">
-              <p class="testinomial__text">The TTY gem-suite has helped me automate a ton of stuff I was doing manually. Writing the scripts in Ruby instead of pure Bash script has motivated me a lot, too. The api design for prompts, spinners and commands made it so intuitive to use, such a joy.</p>
-              <h3 class="testimonial__name">Time Brandes</h3>
-              <h3 class="testimonial__job">CEO, Zinkler &amp; Brandes GmbH</h3>
+              <p class="testinomial__text">{{ testimonial.body }}</p>
+              <h3 class="testimonial__name">{{ testimonial.name }}</h3>
+              <h3 class="testimonial__job">{{ testimonial.job }}</h3>
             </div>
           </div>
         </li>
-        <li class="testimonials__item">
-          <div class="testimonial">
-            <i class="fa fa-quote-left testimonial__icon"></i>
-            <div class="testimonial__body">
-              <p class="testinomial__text">I was always surprised by the amount of problems that the TTY family of gems solves. I remember when I first started looking for solutions for the command line gems I was developing, more often than not I landed on one of the TTY gems.</p>
-              <h3 class="testimonial__name">Danny Ben Shitrit</h3>
-              <h3 class="testimonial__job">COO, Telesofia Medical</h3>
-            </div>
-          </div>
-        </li>
+        {% endfor %}
       </ul>
     </div>
   </div>
