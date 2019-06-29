@@ -5,7 +5,7 @@ section: overview
 ---
 <section id="home" class="intro">
   <div class='container'>
-    <a href="{{site.baseurl}}/" class="brand">
+    <a href="{{relative_url}}/" class="brand">
       <img class="brand__logo" src="{% asset tty_logo.png @data %}" alt="tty logo" />
     </a>
     <h1 class="blurb">Terminal Apps Creation Toolkit</h1>
@@ -58,7 +58,7 @@ section: overview
       </ul>
 
       <p class="center">
-        <a href="{{ site.baseurl }}/gems" class="button">View all components</a>
+        <a href="{{ relative_url }}/gems" class="button">View all components</a>
       </p>
     </div>
   </div>
@@ -74,7 +74,7 @@ section: overview
 
       <p>TTY components are installed and managed via <a href="http://rubygems.org">rubygems</a>, the <a href="http://www.ruby-lang.org/en/">ruby</a> package manager.</p>
 
-      <p>Choose your favourite <a href="{{ site.baseurl }}/gems">tty component</a> and install it.</p>
+      <p>Choose your favourite <a href="{{ relative_url }}/gems">tty component</a> and install it.</p>
 
 {% highlight bash %}
 $ gem install tty-prompt

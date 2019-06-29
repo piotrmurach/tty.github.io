@@ -5,11 +5,11 @@
 </label>
 <nav role="navigation">
   <ul class="nav-menu">
-    <li class="nav-menu__item {% if page.section == 'overview' %}nav-menu__item-active{% endif %}"><a href="{{ site.baseurl }}/">Home</a></li>
+    <li class="nav-menu__item {% if page.section == 'overview' %}nav-menu__item-active{% endif %}"><a href="{{ relative_url }}/">Home</a></li>
 
-    <li class="nav-menu__item {%if page.section == 'gems' %}nav-menu__item-active{% endif %}"><a href="{{ site.baseurl }}/gems/">Gems</a></li>
+    <li class="nav-menu__item {%if page.section == 'gems' %}nav-menu__item-active{% endif %}"><a href="{{ relative_url }}/gems/">Gems</a></li>
 
-    <li class="nav-menu__item {%if page.section == 'projects' %}nav-menu__item-active{% endif %}"><a href="{{ site.baseurl }}/projects/">Projects</a></li>
+    <li class="nav-menu__item {%if page.section == 'projects' %}nav-menu__item-active{% endif %}"><a href="{{ relative_url }}/projects/">Projects</a></li>
 
     <li class='nav-menu__item more' id='dropdown-button'>
       <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox" />
