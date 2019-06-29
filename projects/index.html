@@ -1,0 +1,32 @@
+---
+layout: default
+title: Projects powered by TTY
+section: projects
+permalink: /projects/
+---
+
+<div class="projects-wrapper">
+  <div class='section-heading'>
+    <h1 class='section-heading__heading'>{{ page.title }}</h1>
+    <p class='section-heading__subhead'>Browse the source of projects created with the TTY components</p>
+  </div>
+
+  <section class="projects-section page-block">
+    <ul class="projects container">
+      {% for project in site.data.projects %}
+      <li class="projects__item">
+        <div class="project">
+          <div class="project__logo">
+            <img src="{% asset {{project.image}} @data %}" />
+          </div>
+          <div class="project__content">
+            <h2>{{project.title}}</h2>
+            <p class="project__text">{{project.desc}}</p>
+            <a href="{{project.link}}" target="_blank" class="button">Learn more</a>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
