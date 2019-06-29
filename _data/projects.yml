@@ -1,0 +1,11 @@
+---
+- name: coinpare
+  title: Coinpare
+  desc: "Compare cryptocurrency trading data across multiple exchanges and blockchains in the comfort of your terminal"
+  link: https://github.com/piotrmurach/coinpare
+  image: coinpare-logo-circle.png
+- name: github_cli
+  title: Github CLI
+  desc: "Powerful command line access to GitHub API. Query and manage your repositories at the speed of your thought"
+  link: https://github.com/piotrmurach/github_cli
+  image: unicorn-logo.png
