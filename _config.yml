@@ -2,7 +2,7 @@
 name: TTY
 highlighter: pygments
 relative_permalinks: false
-baseurl: "/tty"
+baseurl: ""
 google_analytics_id: UA-31255537-2
 plugins:
   - jekyll-assets
