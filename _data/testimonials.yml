@@ -8,3 +8,6 @@
 - name: Janko Marohnić
   job: Software Engineer, Theorem
   body: "The tty-progressbar really helped us in a complex database migration that we had at work recently, it was so incredibly convenient to have all of these features available: ETA display, rate display, logging frequency option, interval option. It worked great for us, and thank you for all your awesome work! <i class='fas fa-heart'></i>"
+- name: Rui Baltazar
+  job: Tech Lead, OpsManager
+  body: "I came across the TTY gem suite in 2018 when I attended a talk at Ruby Kaigi. Since then it's been my default gem suite when I need to write my tools both for work as well as open source (story_branch gem relies heavily on TTY). Intuitive API, clean UX. Definitely on my awesome gems list."
