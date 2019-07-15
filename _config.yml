@@ -15,4 +15,4 @@ assets:
   cachebust: hard
   cache: false
   gzip: [ text/css, application/javascript ]
-exclude: [components, Rakefile, Gemfile, Gemfile.lock, README.md]
+exclude: [bower_components, Rakefile, Gemfile, Gemfile.lock, README.md]
