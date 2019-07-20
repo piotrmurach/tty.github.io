@@ -178,7 +178,7 @@ nav {
   text-align: center;
 
   &__item {
-    margin: 0 6px;
+    margin: 0 4px;
     padding: 0;
 
     @include max-screen($mobile-size) {
@@ -190,7 +190,7 @@ nav {
     a, label {
       display: inline-block;
       margin: 0;
-      padding: 2.4em 1.2em .8em;
+      padding: 2em 1em .8em;
 
       font-size: 1em;
       font-weight: 400;
