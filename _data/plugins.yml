@@ -62,3 +62,6 @@
 - name: tty-pie
   desc: Draw pie charts in your terminal window.
   link: https://github.com/piotrmurach/tty-pie#ttypie-
+- name: tty-logger
+  desc: A readable, structured and beautiful logging for the terminal
+  link: https://github.com/piotrmurach/tty-logger#ttylogger-
