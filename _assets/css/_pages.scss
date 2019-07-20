@@ -116,6 +116,12 @@ table {
   max-width: 54em;
   @include clearfix();
 }
+
+.wide-container {
+  margin: 0 auto;
+  max-width: 72rem;
+  @include clearfix();
+}
 .page-block { padding: 3.625em 0; }
 
 .page-heading {
@@ -376,7 +382,6 @@ nav {
   width: 100%;
   background-color: $orange-color;
   color: white;
-  box-shadow: 0px 0px 35px rgba(0,0,0,.45);
   text-align: center;
 
   .features-heading {
@@ -530,12 +535,6 @@ nav {
   text-align: center;
   color: #fff;
 
-  .wide-container {
-    margin: 0 auto;
-    max-width: 72rem;
-    @include clearfix();
-  }
-
   .setup-header {
     font-size: 2em;
     text-transform: none;
@@ -546,12 +545,15 @@ nav {
     @include display(flex);
     @include flex-wrap(wrap);
     @include flex-direction(row);
-    margin-bottom: 6rem;
 
     li {
       @include flex(1 1 20rem);
       padding-left: 1rem;
       padding-right: 1rem;
+    }
+
+    &.with-space {
+      margin-bottom: 5rem;
     }
   }
 
