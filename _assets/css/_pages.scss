@@ -430,6 +430,12 @@ nav {
       @include max-screen($mobile-size) {
         padding-left: 66px;
       }
+
+      .fab {
+        font-size: 1.4em;
+        margin-right: 6px;
+        padding-top: 1rem;
+      }
     }
   }
 }

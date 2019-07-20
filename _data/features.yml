@@ -1,13 +1,13 @@
 ---
 - icon: fas fa-cogs
   title: Flexible
-  desc: TTY gems let you solve command line problems in the same way Unix philosophy of focused tools does. You can string gems together as you please.
+  desc: TTY components let you solve command line problems in the same way Unix philosophy of focused tools does. You can mix and match components as you please.
 - icon: fas fa-puzzle-piece
   title: Composable
-  desc: Each gem is an independent component and can be combined in many fantastic ways with other libraries outside of tty ecosystem.
+  desc: Each component is an independent piece and can be combined in many ways with other libraries outside of tty ecosystem.
 - icon: fab fa-fort-awesome
   title: Reliable
-  desc: All tty components are well tested to work on all major operating systems and terminal emulators.
+  desc: All tty components are well tested to work on all major operating systems and terminal emulators, allowing you to create platform agnostic tools.<br/> <i class='fab fa-linux' ></i> <i class='fab fa-apple'></i> <i class='fab fa-windows'></i> <i class='fab fa-ubuntu'></i> <i class='fab fa-redhat'></i>
 - icon: far fa-lightbulb
   title: Simple
-  desc: Each tty gem is a small package of straightforward api calls. The source is small and easy to understand.
+  desc: Each tty component is a focused package of straightforward api calls. The source is small and easy to understand, so you can spend time creating and not learning how to use.
