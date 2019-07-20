@@ -66,15 +66,41 @@ section: overview
 
 <section id="quick-start">
   <div class="setup-wrapper">
-    <div class='container page-block'>
-      <div class='section-heading'>
-        <h2 class='section-heading__heading'>Quick Start</h2>
-        <p class='section-heading__subhead'>While installing TTY is simple, there are a few requirements</p>
-      </div>
+    <div class="wide-container page-block">
 
-      <p>TTY components are installed and managed via <a href="http://rubygems.org">rubygems</a>, the <a href="http://www.ruby-lang.org/en/">ruby</a> package manager.</p>
+    <ul class="setup-strip">
+      <li class="setup-desc">
+        <h2 class="setup-header">Quick Start</h2>
+        <p>You are one step away from generating your terminal application. To create a terminal app all you need is to install tty gem. Once tty gem is installed you gain access to a powerful <em>teletype</em> executable. By running teletype with a name of your tool, you will generate your command line application. What's left to do is to add your commands which again can be genereted using <em>teletype</em>.</p>
+      </li>
+      <li class="setup-terminal">
+        <div class="terminal">
+          <span class="terminal__circle"></span><span class="terminal__circle"></span><span class="terminal__circle"></span>
 
-      <p>Choose your favourite <a href="{{ relative_url }}/gems">tty component</a> and install it.</p>
+{% highlight bash %}
+$ gem install tty
+Successfully installed tty
+1 gem installed
+
+$ teletype new app
+Your teletype project has been created successfully.
+Run "teletype help" for more commands.
+
+$ teletype add config
+$ teletype add search
+{% endhighlight %}
+        </div>
+      </li>
+    </ul>
+
+    <ul class="setup-strip">
+      <li class="setup-desc">
+        <h2 class="setup-header">Installing a Component</h2>
+        <p>TTY components are installed and managed via <a href="http://rubygems.org">rubygems</a>, the <a href="http://www.ruby-lang.org/en/">ruby</a> package manager. Choose the <a href="{{ relative_url }}/gems">tty component</a> that matches your needs and install it using its name.</p>
+      </li>
+      <li class="setup-terminal">
+        <div class="terminal">
+          <span class="terminal__circle"></span><span class="terminal__circle"></span><span class="terminal__circle"></span>
 
 {% highlight bash %}
 $ gem install tty-prompt
@@ -83,26 +109,9 @@ Successfully installed tty-prompt
 Parsing documentation for tty-prompt
 1 gem installed
 {% endhighlight %}
-
-      <div class='section-heading'>
-        <h2 class='section-heading__heading'>Creating Terminal Apps</h2>
-        <p class='section-heading__subhead'>You are one step away from generating your terminal application</p>
-      </div>
-
-      <p>To create a terminal app you need to install tty gem first.</p>
-
-{% highlight bash %}
-$ gem install tty
-{% endhighlight %}
-
-      <p class='narrow-para'>Once tty gem is installed you gain access to <em>teletype</em> executable which will generate your command line application.</p>
-
-{% highlight bash %}
-$ teletype new app
-
-Your teletype project has been created successfully.
-Run "teletype help" for more commands.
-{% endhighlight %}
+        </div>
+      </li>
+    </ul>
 
     <p class="center">
       <a href="https://github.com/piotrmurach/tty" target="_blank" class="button">Learn more on github</a>
