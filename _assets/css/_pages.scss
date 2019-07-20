@@ -824,16 +824,19 @@ p {
     @include flex-wrap(wrap);
     @include flex-direction(row);
     @include align-content(center);
+    @include align-items(start);
+    @include justify-content(center);
 
     &__item {
       @include flex(1 1 24rem);
       padding: 1rem;
+      max-width: 30rem;
     }
   }
 
   .project {
     background-color: #fff;
-    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     overflow: hidden;
     text-align: center;

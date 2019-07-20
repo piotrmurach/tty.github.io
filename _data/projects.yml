@@ -9,3 +9,8 @@
   desc: "Powerful command line access to GitHub API. Query and manage your repositories at the speed of your thought"
   link: https://github.com/piotrmurach/github_cli
   image: unicorn-logo.png
+- name: story_branch
+  title: Story Branch
+  desc: "Start and un-start stories in Pivotal Tracker, as well as create branches based on the story name and id in GitHub with a Finished commit message."
+  link: https://github.com/story-branch/story_branch
+  image: story-branch-logo.png

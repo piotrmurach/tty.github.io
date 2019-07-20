@@ -6,13 +6,14 @@ permalink: /projects/
 ---
 
 <div class="projects-wrapper">
+  <div class="wide-container">
   <div class='section-heading'>
     <h1 class='section-heading__heading'>{{ page.title }}</h1>
     <p class='section-heading__subhead'>Browse the source of projects created with the TTY components</p>
   </div>
 
   <section class="projects-section page-block">
-    <ul class="projects container">
+    <ul class="projects">
       {% for project in site.data.projects %}
       <li class="projects__item">
         <div class="project">
@@ -28,5 +29,6 @@ permalink: /projects/
       </li>
       {% endfor %}
     </ul>
+  </div>
   </section>
 </div>
