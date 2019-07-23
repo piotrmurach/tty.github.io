@@ -856,6 +856,30 @@ p {
   }
 }
 
+.community-wrapper {
+  .section-heading {
+    margin: 4.2em 1em 0 1em;
+  }
+
+  .section-explanation {
+    margin: 0 auto 4.2em auto;
+    width: 60%;
+    @include max-screen($mobile-size) { width: 100%; }
+    color: #767676
+  }
+
+  .resources-section {
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .resources {
+    &__item {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 .footer-wrapper {
   $gray-color: #a9a9a9;
   position: relative;

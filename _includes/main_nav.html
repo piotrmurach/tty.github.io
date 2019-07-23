@@ -36,7 +36,7 @@
       </nav>
     </li>
 
-    <li class="nav-menu__item"><a href="https://gitter.im/piotrmurach/tty">Chat</a></li>
+    <li class="nav-menu__item {%if page.section == 'community' %}nav-menu__item-active{% endif %}"><a href="{{ relative_url }}/community/">Community</a></li>
     <!-- <li class="nav-link"><a href="{{ prefix }}blog/">Blog</a></li> -->
   </ul>
 </nav>
