@@ -14,13 +14,17 @@ permalink: /components/
 
   <p class='section-explanation'>Each component can be installed independently,<br/> so you can mix and match what your terminal app needs.</p>
 
-  <section class="plugins-section page-block">
-    <dl class='plugins-list'>
+  <section class="plugins-section wide-container">
+    <ul class='plugins-list'>
       {% assign sorted_plugins = site.data.plugins | sort: 'name' %}
       {% for plugin in sorted_plugins %}
-        <dt class='plugins-list__title'><a href="http://github.com/piotrmurach/{{ plugin.name }}">{{ plugin.name }}</a></dt>
-        <dd class='plugins-list__desc {% if sorted_plugins.last.name == plugin.name %}plugins-list__desc-last{% endif %}'>{{ plugin.desc }}</dd>
+      <li class="plugins-list__item">
+        <a href="http://github.com/piotrmurach/{{ plugin.name }}" class="plugins-list__link" target="_blank">
+          <h2 class='plugins-list__title'><i class="fas fa-gem"></i> {{ plugin.name }}</h2>
+        <p class='plugins-list__desc {% if sorted_plugins.last.name == plugin.name %}plugins-list__desc-last{% endif %}'>{{ plugin.desc }}</p>
+        </a>
+      </li>
       {% endfor %}
-    </dl>
+    </ul>
   </section>
 </div>

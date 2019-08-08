@@ -21,7 +21,7 @@ a {
   text-decoration: none;
   color: $main-color;
 
-  &:visited { color: $main-color; }
+  &:visited { color: $main-dark-color; }
   &:hover   { color: $main-dark-color; }
 }
 
@@ -509,22 +509,15 @@ nav {
     &__action {
       position: relative;
       display: inline-block;
-      padding-bottom: 0.4em;
+      padding: 0.25rem 0.5rem;
       color: $main-dark-color;
+      border: 1px solid $dark-red-color;
+      box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.2);
+      @include transition(.1s ease-in-out .1s);
 
-      &:after {
-        @include transition(all 0.15s ease-in-out);
-        content: '';
-        position: absolute;
-        bottom: 0.4em;
-        left: 0;
-        height: 1px;
-        width: 100%;
-        background: $main-dark-color;
-        @include linear-gradient(left, transparent 0%, $main-dark-color 50%, transparent 100%);
-      }
-      &:hover::after {
-        bottom: 0.2em;
+      &:hover {
+        @include transform(translate(4px, 4px));
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -789,28 +782,62 @@ p {
   }
 }
 .plugins-section {
-  border-top: 1px solid #e5e5e5;
+  margin-bottom: 3.5rem;
 }
+
 .plugins-list {
-  width: 50%;
-  @include max-screen($mobile-size) { width: 100%; }
   margin: 0 auto;
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  @include align-items(start);
+
+  &__item {
+    @include flex(1 1 20rem);
+    @include min-screen($desktop-size) {
+      max-width: 23rem;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    width: 96%;
+    @include min-screen($desktop-size) {
+      min-height: 12rem;
+    }
+    border: 0.2rem solid #111;
+    box-shadow: 0.4rem 0.4rem 0 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    color: $font-color;
+    @include transition(.1s ease-in-out .1s);
+
+    &:visited { color: $font-color; }
+
+    &:hover {
+      @include transform(translate(0.25rem, 0.25rem));
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+      color: $dark-red-color;
+      border-color: $dark-red-color;
+    }
+  }
 
   &__title {
-    padding: 20px 0 10px 0;
-    margin-left: 20px;
+    padding: 0;
+    margin: 0;
     text-align: left;
+    text-transform: none;
+
+    .fas {
+      color: $dark-red-color;
+    }
   }
 
   &__desc {
-    margin: 0px 20px;
-    padding: 0 0 20px 0;
+    margin: 0;
+    padding: 1rem 0 0 0;
     text-align: left;
-    border-bottom: 1px solid #ced1d6;
-
-    &-last {
-      border-bottom: none;
-    }
   }
 }
 
@@ -836,8 +863,8 @@ p {
 
   .project {
     background-color: #fff;
-    box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
+    border: 0.2rem solid #111;
+    box-shadow: 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
     overflow: hidden;
     text-align: center;
     padding: 2rem 1rem 1rem 1rem;
