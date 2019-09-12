@@ -65,3 +65,6 @@
 - name: tty-logger
   desc: A readable, structured and beautiful logging for the terminal
   link: https://github.com/piotrmurach/tty-logger#ttylogger-
+- name: tty-link
+  desc: Hyperlinks in your terminal
+  link: https://github.com/piotrmurach/tty-link#ttylink-
