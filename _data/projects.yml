@@ -11,6 +11,11 @@
   image: unicorn-logo.png
 - name: story_branch
   title: Story Branch
-  desc: "Start and un-start stories in Pivotal Tracker, as well as create branches based on the story name and id in GitHub with a Finished commit message."
+  desc: "Start and un-start stories in Pivotal Tracker. Create branches based on the story name and id in GitHub with a Finished commit message."
   link: https://github.com/story-branch/story_branch
   image: story-branch-logo.png
+- name: tenpin
+  title: Tenpin
+  desc: "Play a bowling game known as 'ten pins' in your terminal. Experience a rush of joy when you knock down all ten pins."
+  link: https://github.com/piotrmurach/tenpin
+  image: tenpin-logo.png
