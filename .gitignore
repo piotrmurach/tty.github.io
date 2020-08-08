@@ -3,4 +3,5 @@
 _site
 .sass-cache
 .asset-cache
+.jekyll-cache
 components
