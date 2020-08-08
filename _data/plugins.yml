@@ -5,27 +5,33 @@
 - name: tty-progressbar
   desc: A flexible progress bars drawing in terminal emulators.
   link: https://github.com/piotrmurach/tty-progressbar#ttyprogressbar-
-- name: tty-spinner
-  desc: A terminal spinner for tasks with non-deterministic time.
-  link: https://github.com/piotrmurach/tty-spinner#ttyspinner-
-- name: tty-command
-  desc: Execute shell commands with pretty logging.
-  link: https://github.com/piotrmurach/tty-command#ttycommand-
+- name: tty-option
+  desc: Parser for command line arguments, keywords and options.
+  link: https://github.com/piotrmurach/tty-option#ttyoption-
+- name: tty-logger
+  desc: A readable, structured and beautiful logging for the terminal.
+  link: https://github.com/piotrmurach/tty-logger#ttylogger-
 - name: tty-table
   desc: A flexible and intuitive table output generator.
   link: https://github.com/piotrmurach/tty-table#ttytable-
 - name: tty-markdown
   desc: Convert a markdown document or text into a terminal friendly output.
   link: https://github.com/piotrmurach/tty-markdown#ttymarkdown-
-- name: tty-reader
-  desc: A set of methods for processing keyboard input in character, line and multiline modes.
-  link: https://github.com/piotrmurach/tty-reader#ttyreader-
+- name: tty-command
+  desc: Execute shell commands with pretty logging.
+  link: https://github.com/piotrmurach/tty-command#ttycommand-
 - name: tty-file
   desc: File and directory manipulation utility methods.
   link: https://github.com/piotrmurach/tty-file#ttyfile-
 - name: tty-config
   desc: Define, read and write any Ruby app configurations with a penchant for terminal clients.
   link: https://github.com/piotrmurach/tty-config#ttyconfig-
+- name: tty-spinner
+  desc: A terminal spinner for tasks with non-deterministic time.
+  link: https://github.com/piotrmurach/tty-spinner#ttyspinner-
+- name: tty-reader
+  desc: A set of methods for processing keyboard input in character, line and multiline modes.
+  link: https://github.com/piotrmurach/tty-reader#ttyreader-
 - name: tty-font
   desc: Write text in large stylized characters using a variety of terminal friendly fonts.
   link: https://github.com/piotrmurach/tty-font#ttyfont-
@@ -62,9 +68,6 @@
 - name: tty-pie
   desc: Draw pie charts in your terminal window.
   link: https://github.com/piotrmurach/tty-pie#ttypie-
-- name: tty-logger
-  desc: A readable, structured and beautiful logging for the terminal
-  link: https://github.com/piotrmurach/tty-logger#ttylogger-
 - name: tty-link
-  desc: Hyperlinks in your terminal
+  desc: Hyperlinks in your terminal.
   link: https://github.com/piotrmurach/tty-link#ttylink-
