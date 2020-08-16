@@ -906,8 +906,28 @@ p {
 
   .resources {
     &__item {
-      display: block;
+      @include display(flex);
+      align-items: center;
       margin-bottom: 1rem;
+
+      .arrow {
+        color: #111;
+        font-size: 1.5em;
+        border: 2px solid #111;
+        padding: 0.2rem;
+        margin-right: 1rem;
+        box-shadow: 0.4rem 0.4rem 0 0 rgba(0, 0, 0, 0.2);
+        @include transition(.1s ease-in-out .1s);
+      }
+    }
+
+    &__link {
+      &:hover {
+        .arrow {
+          @include transform(translate(0.25rem, 0.25rem));
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+        }
+      }
     }
   }
 }
