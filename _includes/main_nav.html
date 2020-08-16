@@ -3,7 +3,7 @@
   <div class='nav-toggle__name'>Menu</div>
   <div class='nav-toggle__burger'>&#9776;</div>
 </label>
-<nav role="navigation">
+<nav id="navigation" role="navigation">
   <ul class="nav-menu">
     <li class="nav-menu__item {% if page.section == 'overview' %}nav-menu__item-active{% endif %}"><a href="{{ relative_url }}/">Home</a></li>
 
@@ -15,7 +15,7 @@
       <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox" />
       <label for="dropdown-toggle" class='dropdown-toggle'>Docs</label>
 
-      <nav class='nav-dropdown' role="navigation">
+      <nav id="nav-dropdown" class='nav-dropdown' role="navigation">
         {% assign sorted_plugins = site.data.plugins | sort: 'name' %}
         <ul class='nav-dropdown-menu'>
           <li class='nav-dropdown-menu__item'>
