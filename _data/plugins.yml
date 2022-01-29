@@ -38,6 +38,9 @@
 - name: tty-screen
   desc: Terminal screen properties detection.
   link: https://github.com/piotrmurach/tty-screen#ttyscreen-
+- name: tty-sparkline
+  desc: Sparkline charts for terminal applications.
+  link: https://github.com/piotrmurach/tty-sparkline#ttysparkline-
 - name: pastel
   desc: Terminal strings styling with intuitive and clean API.
   link: https://github.com/piotrmurach/pastel#pastel
@@ -47,6 +50,9 @@
 - name: tty-editor
   desc: Opens a file or text in the user's preferred editor.
   link: https://github.com/piotrmurach/tty-editor#ttyeditor-
+- name: tty-exit
+  desc: Terminal exit codes for humans and machines.
+  link: https://github.com/piotrmurach/tty-exit#ttyexit-
 - name: tty-color
   desc: Terminal color capabilities detection.
   link: https://github.com/piotrmurach/tty-color#ttycolor-
@@ -54,7 +60,7 @@
   desc: Move terminal cursor around.
   link: https://github.com/piotrmurach/tty-cursor#ttycursor-
 - name: tty-platform
-  desc: Detecting different operating systems.
+  desc: Detect different operating systems.
   link: https://github.com/piotrmurach/tty-platform#ttyplatform-
 - name: tty-tree
   desc: Print directory or structured data in a tree like format.
