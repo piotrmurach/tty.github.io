@@ -19,7 +19,7 @@ permalink: /components/
       {% assign sorted_plugins = site.data.plugins | sort: 'name' %}
       {% for plugin in sorted_plugins %}
       <li class="plugins-list__item">
-        <a href="http://github.com/piotrmurach/{{ plugin.name }}" class="plugins-list__link" target="_blank">
+        <a href="http://github.com/piotrmurach/{{ plugin.name }}" class="plugins-list__link">
           <h2 class='plugins-list__title'><i class="fas fa-gem"></i> {{ plugin.name }}</h2>
         <p class='plugins-list__desc {% if sorted_plugins.last.name == plugin.name %}plugins-list__desc-last{% endif %}'>{{ plugin.desc }}</p>
         </a>
