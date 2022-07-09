@@ -88,22 +88,22 @@ table {
 
 .button {
   display: inline-block;
-  box-shadow: 3px 4px 0 rgba(0,0,0,0.1);
-  background-color: #fff;
-  border: 1px solid $dark-red-color;
-  color: $dark-red-color;
-  text-transform: uppercase;
   padding: .65em 1.5em;
+  transition: all .25s ease-in-out;
+  border: .2rem solid $dark-red-color;
+  background-color: $white-color;
+  color: $dark-red-color;
   letter-spacing: 1px;
   text-align: center;
-  @include transition(all .25s ease-in-out);
+  text-transform: uppercase;
 
   &:visited {
     color: $dark-red-color;
   }
+
   &:hover {
     background-color: $dark-red-color;
-    color: #fff;
+    color: $white-color;
   }
 }
 
@@ -576,16 +576,15 @@ nav {
   }
 
   .button {
-    background: #fff;
-    color: #fff;
-    background: $orange-color;
+    background: $white-color;
 
-    &:after {
+    &::after {
       height: 0;
     }
 
     &:hover {
-      background: darken($orange-color, 10);
+      background: $orange-color;
+      color: $white-color;
     }
   }
 
