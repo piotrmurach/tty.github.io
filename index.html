@@ -87,7 +87,7 @@ $ teletype add search
             <div class="gems-list__content">
               <h4 class="gems-list__title">{{ gem.name }}</h4>
               <p>{{ gem.desc }}</p>
-              <a class="gems-list__action" href="{{ gem.link }}">Learn more</a>
+              <a class="gems-list__action" href="{{ gem.link }}">Learn more {% include arrow.html %}</a>
             </div>
           </li>
         {% endfor %}

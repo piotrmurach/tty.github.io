@@ -448,76 +448,88 @@ nav {
 .gems-wrapper {
   .gems-list {
     margin-bottom: 2em;
-    @include min-screen($medium-size){
-      @include display(flex);
-      @include flex-wrap(wrap);
+
+    @include min-screen($medium-size) {
+      display: grid;
+      grid-gap: 0;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
       margin-bottom: 3.75em;
     }
 
     &__item {
-      position: relative;
-      display: block;
-      @include min-screen($medium-size) {
-        @include display(flex);
-        @include flex-direction(column);
-        width: 33.3333%;
-        border-right: 1px solid #e5e5e5;
-        padding: 1.75em 1.25em;
-      }
+      display: flex;
       margin: 0;
+      padding: 1.2em .85em;
+      border-bottom: 1px solid $grey-color;
+      border-color: $grey-color;
       text-align: center;
-      padding: 1.2em 0.85em;
-      border-color: #e5e5e5;
-      border-bottom: 1px solid #e5e5e5;
+
+      @include min-screen($medium-size) {
+        flex-direction: column;
+        padding: 1.75em 1.25em;
+        border-right: 1px solid $grey-color;
+      }
 
       &:nth-child(3n) {
-        border-right: none;
+        border-right: 0;
       }
 
-      &--7, &--8 {
+      &--7,
+      &--8 {
         @include min-screen($medium-size) {
-          border-bottom: none;
+          border-bottom: 0;
         }
       }
+
       &--9 {
-        border-bottom: none;
+        border-bottom: 0;
       }
     }
 
     &__icon {
-      display: inline-block;
-      font-size: 40px;
+      color: $main-dark-color;
+      font-size: 2.3em;
       white-space: normal;
-      color: #BE1D2C;
+
       @include max-screen($medium-size) {
-        float: left;
+        font-size: 2em;
       }
     }
 
     &__content {
-      display: block;
       @include max-screen($medium-size) {
+        margin-left: 1rem;
         text-align: left;
-        margin-left: 4.825em;
       }
     }
 
     &__title {
       font-size: 1em;
+
+      @include max-screen($medium-size) {
+        margin: 0;
+      }
     }
 
     &__action {
-      position: relative;
-      display: inline-block;
-      padding: 0.25rem 0.5rem;
-      color: $main-dark-color;
-      border: 1px solid $dark-red-color;
-      box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.2);
-      @include transition(.1s ease-in-out .1s);
+      .arrow {
+        width: 11px;
+        height: 11px;
+        margin-left: 2px;
+        transition: transform .2s ease-in;
+        fill: $main-dark-color;
+
+        @include max-screen($medium-size) {
+          width: 9px;
+          height: 9px;
+        }
+      }
 
       &:hover {
-        @include transform(translate(4px, 4px));
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+        .arrow {
+          transform: translateX(5px);
+          fill: $orange-color;
+        }
       }
     }
   }
