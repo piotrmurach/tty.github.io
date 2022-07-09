@@ -17,12 +17,12 @@ body {
 }
 
 a {
-  @include transition(color .5s ease);
+  transition: color .2s ease;
+  color: $main-dark-color;
   text-decoration: none;
-  color: $main-color;
 
   &:visited { color: $main-dark-color; }
-  &:hover   { color: $main-dark-color; }
+  &:hover { color: $orange-color; }
 }
 
 ul {
