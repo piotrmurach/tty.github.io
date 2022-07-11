@@ -24,7 +24,7 @@
   desc: File and directory manipulation utility methods.
   link: https://github.com/piotrmurach/tty-file#ttyfile-
 - name: tty-config
-  desc: Define, read and write any Ruby app configurations with a penchant for terminal clients.
+  desc: A highly customisable application configuration interface.
   link: https://github.com/piotrmurach/tty-config#ttyconfig-
 - name: tty-spinner
   desc: A terminal spinner for tasks with non-deterministic time.
